@@ -39,7 +39,6 @@ $(function(){
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<section>
 					<h1 class="entry-title">
 						<span>Sign Up</span>
 					</h1>

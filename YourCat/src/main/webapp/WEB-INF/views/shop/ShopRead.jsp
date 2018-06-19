@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
@@ -7,92 +6,63 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8">
-				<section>
-					<h1 class="entry-title">
-						<span>상세페이지</span>
-					</h1>
-					<hr>
-					<form class="form-horizontal" method="post" name="signup"
-						id="signup" enctype="multipart/form-data">
+			<div class="col-md-10">
+				<!-- 제품상세페이지 -->
+				<div class="form-group">
+					<img alt="" src="<c:url value='/resources/image/item_cat03.jpg'/>" height="370" >
+				</div>
+					<form class="form-horizontal" method="post" name="buyInfo" id="buyInfo" enctype="multipart/form-data" action="<c:url value='/shop/buyItem'/>">
 						<div class="form-group">
-							<label class="control-label col-sm-3">판매가격<span class="text-danger">*</span></label>
-							<div class="col-md-8 col-sm-9">
+							<label class="control-label col-sm-3">판매가격</label>
+							<div class="col-md-7 col-sm-9">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-									 <input type="email" class="form-control" name="emailid" id="emailid" placeholder="Enter your Email ID" value="" disabled>
+									 <input type="text" class="form-control" name="itemPrice" id="itemPrice"  value="***" readonly>
 								</div>
 								
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="control-label col-sm-3">Set Password <span
-								class="text-danger">*</span></label>
-							<div class="col-md-5 col-sm-8">
+							<label class="control-label col-sm-3">배송정보 </label>
+							<div class="col-md-7 col-sm-8">
 								<div class="input-group">
-									<span class="input-group-addon"><i
-										class="glyphicon glyphicon-lock"></i></span> <input type="password"
-										class="form-control" name="password" id="password"
-										placeholder="Choose password (5-15 chars)" value="">
+									 <input type="text" class="form-control" name="deliveryInfo" id="deliveryInfo" value="무료배송" readonly>
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-sm-3">Confirm Password <span
-								class="text-danger">*</span></label>
-							<div class="col-md-5 col-sm-8">
+							<label class="control-label col-sm-3">상품정보 </label>
+							<div class="col-md-7 col-sm-8">
 								<div class="input-group">
-									<span class="input-group-addon"><i
-										class="glyphicon glyphicon-lock"></i></span> <input type="password"
-										class="form-control" name="cpassword" id="cpassword"
-										placeholder="Confirm your password" value="">
+									<textarea class="form-control" rows="5" cols="50" readonly>상품정보 ***</textarea>
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-sm-3">Full Name <span
-								class="text-danger">*</span></label>
-							<div class="col-md-8 col-sm-9">
-								<input type="text" class="form-control" name="mem_name"
-									id="mem_name" placeholder="Enter your Name here" value="">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="control-label col-sm-3">Contact No. <span
-								class="text-danger">*</span></label>
-							<div class="col-md-5 col-sm-8">
+							<label class="control-label col-sm-3">수량</label>
+							<div class="col-md-7 col-sm-8">
 								<div class="input-group">
-									<span class="input-group-addon"><i
-										class="glyphicon glyphicon-phone"></i></span> <input type="text"
-										class="form-control" name="contactnum" id="contactnum"
-										placeholder="Enter your Primary contact no." value="">
+									 <input type="number" class="form-control" id="buyCount" value="1" min="1" max="5">
 								</div>
 							</div>
 						</div>
-
 						<div class="form-group">
-							<label class="control-label col-sm-3">Profile Photo </label>
-							<div class="col-md-5 col-sm-8">
+							<label class="control-label col-sm-3">총 상품 금액</label>
+							<div class="col-md-7 col-sm-8">
 								<div class="input-group">
-									<span class="input-group-addon" id="file_upload"><i
-										class="glyphicon glyphicon-upload"></i></span> <input type="file"
-										name="file_nm" id="file_nm" class="form-control upload"
-										placeholder="" aria-describedby="file_upload">
+									<input type="text" class="form-control" name="totalPrice" id="totalPrice"  value="****" readonly>
 								</div>
 							</div>
 						</div>
-
-
 						<div class="form-group">
 							<div class="col-xs-offset-3 col-xs-10">
-								<input name="Submit" type="submit" value="Edit"
-									class="btn btn-default">
+								<input name="Submit" type="submit" value="구매" class="btn btn-default">
 							</div>
 						</div>
 					</form>
 			</div>
+			
 		</div>
+	
 	</div>
 	<!-- Main End -->

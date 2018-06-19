@@ -11,8 +11,7 @@
 <title><tiles:getAsString name="layout.title" /></title>
 </head>
 
-<body id="myPage" data-spy="scroll" data-target=".navbar"
-	data-offset="50">
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 	<!-- Navbar Start-->
 	<nav class="navbar navbar-default navbar-fixed-top"> <tiles:insertAttribute
 		name="layout.top" /> </nav>
