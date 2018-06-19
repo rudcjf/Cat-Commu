@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="layout.user" template="/WEB-INF/views/template/layout_user_main.jsp">
+		<put-attribute name="layout.header" value="/WEB-INF/views/template/header.jsp"/>
+		<put-attribute name="layout.footer" value="/WEB-INF/views/template/footer.jsp" />
+		<put-attribute name="layout.top" value="/WEB-INF/views/template/top.jsp" />
+	</definition>
+
+	<!-- home by user --> 
+	<!-- definition name이 view의 name과 일치해야함 -->
+	<!-- template:틀 , put-attribute:내용 -->
+	<definition name="*" extends="layout.user">
+		<put-attribute name="layout.title" value="template {1}" />
+		<put-attribute name="layout.body" value="/WEB-INF/views/{1}.jsp" />
+	</definition>
+	
+	<definition name="/*/*" extends="layout.user">
+		<put-attribute name="layout.title" value="template {1} {2}" />
+		<put-attribute name="layout.body" value="/WEB-INF/views/{1}/{2}.jsp" />
+		<put-attribute name="layout.css" value="/{2}"></put-attribute>
+	</definition>
+	
+	
+</tiles-definitions>
+
