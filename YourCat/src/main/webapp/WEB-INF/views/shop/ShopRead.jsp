@@ -8,10 +8,22 @@
 		<div class="row">
 			<div class="col-md-10">
 				<!-- 제품상세페이지 -->
+				<h3 class="entry-title">
+						<span>제품 상세</span>
+					</h3>
 				<div class="form-group">
 					<img alt="" src="<c:url value='/resources/image/item_cat03.jpg'/>" height="370" >
 				</div>
 					<form class="form-horizontal" method="post" name="buyInfo" id="buyInfo" enctype="multipart/form-data" action="<c:url value='/shop/buyItem'/>">
+						<div class="form-group">
+							<label class="control-label col-sm-3">상품명</label>
+							<div class="col-md-7 col-sm-9">
+								<div class="input-group">
+									 <input type="text" class="form-control" name="itemName" id="itemName"  value="***" readonly>
+								</div>
+								
+							</div>
+						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3">판매가격</label>
 							<div class="col-md-7 col-sm-9">
@@ -57,6 +69,7 @@
 						<div class="form-group">
 							<div class="col-xs-offset-3 col-xs-10">
 								<input name="Submit" type="submit" value="구매" class="btn btn-default">
+								<a class="btn btn-default" href="<c:url value='/shoplist'/>">목록으로</a>
 							</div>
 						</div>
 					</form>

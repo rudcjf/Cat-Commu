@@ -13,7 +13,7 @@
 						<span>배송지 정보</span>
 					</h3>
 					<hr>
-					<form class="form-horizontal" method="post" name="buyInfo" id="buyInfo" enctype="multipart/form-data" action="<c:url value='/shop/buyItem'/>">
+					<form class="form-horizontal" method="post" name="buyInfo" id="buyInfo" enctype="multipart/form-data" action="#">
 						<div class="form-group">
 							<label class="control-label col-sm-3">이름</label>
 							<div class="col-md-7 col-sm-9">
@@ -96,6 +96,7 @@
 						<div class="form-group">
 							<div class="col-xs-offset-3 col-xs-10">
 								<input name="Submit" type="submit" value="결제" class="btn btn-default">
+								
 							</div>
 						</div>
 					</form>
