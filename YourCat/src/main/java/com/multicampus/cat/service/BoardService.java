@@ -14,10 +14,19 @@ public class BoardService {
 	public Object getList(Object dataMap) {
 		String sqlMapId = "board.list";
 
-		//Object resultObject = dao.getList(sqlMapId, dataMap);
+		Object resultObject = dao.getList(sqlMapId, dataMap);
 		
-		return null;//resultObject;
+		return resultObject;
 	}
+	
+	public Object getObject(Object dataMap) {
+		String sqlMapId = "board.read";
+		
+		Object resultObject = dao.getObject(sqlMapId, dataMap);
+		
+		return resultObject;
+	}
+	
 	
 	
 }

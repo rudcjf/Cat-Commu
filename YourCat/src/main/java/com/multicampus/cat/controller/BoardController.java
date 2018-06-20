@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.multicampus.cat.service.BoardService;
+
 //import com.multicampus.cat.service.BoardService;
 
 /**
@@ -24,8 +26,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class BoardController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
-	//@Autowired
-	//private BoardService service;
+	@Autowired
+	private BoardService service;
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -39,15 +41,17 @@ public class BoardController {
 		List<Object> resultList = new ArrayList<Object>();
 		
 		if("BoardList".equalsIgnoreCase(action)) {
-			System.out.println(">>");
 			viewName = viewName + action;
-			//resultList = (List<Object>) service.getList(paramMap);
-			
+			resultList = (List<Object>) service.getList(paramMap);
 		} else if ("BoardRead".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
+			resultMap =  (Map<String, Object>) service.getObject(paramMap);
 		} else if ("BoardEdit".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
-			
+			resultMap =  (Map<String, Object>) service.getObject(paramMap);
+		}else if ("BoardUpdate".equalsIgnoreCase(action)) {
+			viewName = viewName + action;
+			//resultMap =  (Map<String, Object>) service.getEditObject(paramMap);
 		}
 		
 		

@@ -11,16 +11,16 @@
 					</h3>
 		</thead>
 		<tbody>
-			<form action="write_ok.jsp" method="post" encType="multiplart/form-data">
+			<form action="<c:url value='/board/BoardRead?BOARD_SEQ=${resultMap.BOARD_SEQ}' />" method="post" encType="multiplart/form-data">
 				<tr>
 					<th>제목</th>
 					<td><input type="text" placeholder="제목을 입력하세요. "
-						name="subject" class="form-control" /></td>
+						name="subject" class="form-control" value="${resultMap.BOARD_TITLE}"/></td>
 				</tr>
 				<tr>
 					<th>내용</th>
 					<td><textarea cols="10" rows="30" placeholder="내용을 입력하세요. "
-							name="content" class="form-control"></textarea></td>
+							name="content" class="form-control">${resultMap.BOARD_CONTENTS}</textarea></td>
 				</tr>
 				<tr>
 					<th>첨부파일</th>
@@ -37,7 +37,8 @@
 						<!-- <input type="button" value="등록" onclick="sendData()" class="pull-right"/>
                     <input type="button" value="reset" class="pull-left"/>
                     <input type="button" value="글 목록으로... " class="pull-right" onclick="javascript:location.href='BoardList.jsp'"/> -->
-						<a class="btn btn-default" onclick="sendData()"> 저장 </a> 
+						<!-- <a class="btn btn-default" onclick="sendData()"> -->
+						<button type="submit" class="btn btn-default" >저장 </button>
 						<input type="reset" class="btn btn-default" value="reset">
 						<a class="btn btn-default" href="<c:url value='/board/BoardList'/>">
 							목록으로</a>

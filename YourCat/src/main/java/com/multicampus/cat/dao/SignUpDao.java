@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class SignUpDao {
+	
 	public Object getObject(Object dataMap) {
 		Map<String, Object> resultObject = new HashMap<String, Object>();
 		resultObject.put("emailid", "321652168468");

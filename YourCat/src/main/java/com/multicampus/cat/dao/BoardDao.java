@@ -9,8 +9,8 @@ public class BoardDao {
 
 	@Autowired
 	private SqlSessionTemplate sqlSession;
-
-/*	public Object getList(String sqlMapId, Object dataMap) {
+	
+	public Object getList(String sqlMapId, Object dataMap) {
 		Object result = sqlSession.selectList(sqlMapId, dataMap);
 
 		return result;
@@ -32,6 +32,6 @@ public class BoardDao {
 		
 		Integer result = sqlSession.delete(sqlMapId,dataMap);
 		return result;
-	}*/
+	}
 
 }

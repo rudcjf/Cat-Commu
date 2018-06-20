@@ -25,102 +25,16 @@
 			<tbody>
 				<c:forEach items="${resultList}" var="resultData" varStatus="loop">
 					<tr class="${(loop.index+1)%2 == 2 ? 'odd gradeX' : 'even gradeC'}">
-						<a href="<c:url value="/member/read?MEMBER_SEQ=${resultData.MEMBER_SEQ}" />">
-								${resultData.MEMBER_ID}</a>
-								
 						<td>${resultData.BOARD_SEQ}</td>
-						<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>	
+						<td><a href="<c:url value="/board/BoardRead?BOARD_SEQ=${resultData.BOARD_SEQ}" />">${resultData.BOARD_TITLE}</a></td>
+						<td>${resultData.MEMBER_ID}</td>
+						<td>${resultData.BOARD_DATE}</td>
+						<td>${resultData.BOARD_VIEWS}</td>
+						<td>${resultData.BOARD_LIKE}</td>	
 					</tr>
 				</c:forEach>
 			</tbody>
-			<tr>
-				<td>10</td>
-				<td><a href="<c:url value='/board/BoardRead'/>"> 우리집 고양이
-						&nbsp;</a> <span class="badge badge_new">new</span></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-
-			<tr>
-				<td>9</td>
-				<td><a href="<c:url value='/board/BoardRead'/>"> 너네집 고양이
-						&nbsp;</a><span class="badge">12</span></td>
-				<td>Ã¬ÂÂ´Ã«ÂÂÃ¬ÂÂ°</td>
-				<td>2018.05.17</td>
-				<td>20</td>
-				<td>-1</td>
-			</tr>
-
-			<tr>
-				<td>8</td>
-				<td>먀옹</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>7</td>
-				<td>야옹</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>6</td>
-				<td>냐옹´</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>5</td>
-				<td>애옹</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>4</td>
-				<td>야옹</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>귀여운고양이 </td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>귀여운길냥이 </td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td>귀여운냥냥이</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
+		
 		</table>
 	</div>
 	<div class="board_footer">

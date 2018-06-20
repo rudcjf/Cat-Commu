@@ -6,20 +6,55 @@
 
 <mapper namespace="board">
 	<select id="list" resultType="Map" parameterType="Map" timeout="10">
-		select BOARD_SEQ, BOARD_TITLE, BOARD_DATE, BOARD_VIEWS,
+		select 
+			BOARD_SEQ, BOARD_TITLE, BOARD_DATE, BOARD_VIEWS,
             BOARD_LIKE,  MEMBER_ID
-            from cat_board
-		where board_status = 'Y'
+        from CAT_BOARD
+		where BOARD_STATUS = 'Y'
+		order by BOARD_SEQ DESC
 	</select>
 	
 	<select id="read" resultType="Map" parameterType="Map">
-		select 
+		 select 
 			*
-        from  CIP_AUTHORITY_MEMBER 
-         <where>
-         	<if test = "MEMBER_SEQ != null">
-         		and MEMBER_SEQ = #{MEMBER_SEQ}
-         	</if>
-         </where>
-	</select>
+		from CAT_BOARD
+		<![CDATA[
+		        where BOARD_SEQ = #{BOARD_SEQ}
+		]]>
+		
+	</select> 
+	
+	<update id="update" parameterType="Map">
+	    UPDATE CAT_BOARD SET
+			BOARD_TITLE = #{BOARD_TITLE} 	
+			, BOARD_CONTENTS = #{BOARD_CONTENTS} 	
+			
+	</update>
+	
+	<insert id="merge" parameterType="Map">
+		MERGE INTO CAT_BOARD BOARD1
+		     USING (SELECT #{BOARD_SEQ} AS BOARD_SEQ FROM DUAL) BOARD2
+		        ON (BOARD1.BOARD_SEQ = BOARD2.BOARD_SEQ)
+		 WHEN MATCHED THEN
+		    UPDATE SET
+				NAME = #{NAME} 	<!-- 명칭 -->
+				, TELEPHONE = #{TELEPHONE} 	<!-- 대표 전화번호 -->
+				, ORDER_NUMBER = #{ORDER_NUMBER} 	<!-- 정렬순서 -->
+				, PARENT_ORGANIZATION_SEQ = #{PARENT_ORGANIZATION_SEQ} 	<!-- 상위 조직 일련번호 -->
+		 WHEN NOT MATCHED THEN
+		    INSERT (
+				ORGANIZATION_SEQ	<!-- 조직 일련번호 -->
+				, NAME	<!-- 명칭 -->
+				, TELEPHONE	<!-- 대표 전화번호 -->
+				, ORDER_NUMBER	<!-- 정렬순서 -->
+				, PARENT_ORGANIZATION_SEQ	<!-- 상위 조직 일련번호 -->
+			)
+			values(
+				#{ORGANIZATION_SEQ}	<!-- 조직 일련번호 -->
+				, #{NAME}	<!-- 명칭 -->
+				, #{TELEPHONE}	<!-- 대표 전화번호 -->
+				, #{ORDER_NUMBER}	<!-- 정렬순서 -->
+				, #{PARENT_ORGANIZATION_SEQ}	<!-- 상위 조직 일련번호 -->
+			)
+	</insert>
 </mapper>
