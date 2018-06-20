@@ -4,7 +4,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
 <div class="main container">
-			<form action="<c:url value='/board/BoardUpdate' />" method="post" encType="multiplart/form-data">
+	<form action="<c:url value='/board/BoardInsert' />" method="post" encType="multiplart/form-data">
 	<table class="table table-bordered">
 		<thead>
 		<h3 class="entry-title">
@@ -12,16 +12,15 @@
 					</h3>
 		</thead>
 		<tbody>
-		<input type="hidden" name ="BOARD_SEQ" value="${resultMap.BOARD_SEQ}">
 				<tr>
 					<th>제목</th>
 					<td><input type="text" placeholder="제목을 입력하세요. "
-						name="boardTitle" class="form-control" value="${resultMap.BOARD_TITLE}"/></td>
+						name="boardTitle" class="form-control" value=""/></td>
 				</tr>
 				<tr>
 					<th>내용</th>
 					<td><textarea cols="10" rows="30" placeholder="내용을 입력하세요. "
-							name="boardContents" class="form-control" >${resultMap.BOARD_CONTENTS}</textarea></td>
+							name="boardContents" class="form-control"></textarea></td>
 				</tr>
 				<tr>
 					<th>첨부파일</th>

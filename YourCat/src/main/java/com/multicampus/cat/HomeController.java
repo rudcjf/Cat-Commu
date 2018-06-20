@@ -36,6 +36,20 @@ public class HomeController {
 		return "/home/Main";
 	}
 	
+	@RequestMapping(value = "/board/insert", method = RequestMethod.GET)
+	public String insert(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "/board/BoardInsert";
+	}
+	
 	@RequestMapping(value = "/#contact", method = RequestMethod.GET)
 	public String homeContact(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);

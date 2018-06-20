@@ -12,25 +12,26 @@ public class BoardDao {
 	
 	public Object getList(String sqlMapId, Object dataMap) {
 		Object result = sqlSession.selectList(sqlMapId, dataMap);
-
 		return result;
 	}
 
 	public Object getObject(String sqlMapId, Object dataMap) {
 		Object result = sqlSession.selectOne(sqlMapId, dataMap);
-		
-		return result;
-	}
-
-	public Object saveObject(String sqlMapId, Object dataMap) {
-		Integer result = sqlSession.insert((String)sqlMapId, dataMap);
-		
 		return result;
 	}
 
 	public Object deleteObject(String sqlMapId, Object dataMap) {
-		
-		Integer result = sqlSession.delete(sqlMapId,dataMap);
+		Integer result = sqlSession.update(sqlMapId,dataMap);
+		return result;
+	}
+	
+	public Object createObject(String sqlMapId, Object dataMap) {
+		Integer result = sqlSession.insert((String)sqlMapId, dataMap);
+		return result;
+	}
+	
+	public Object updateObject(String sqlMapId, Object dataMap) {
+		Integer result = sqlSession.update(sqlMapId, dataMap);
 		return result;
 	}
 

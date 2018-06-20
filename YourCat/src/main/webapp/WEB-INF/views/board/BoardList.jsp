@@ -52,7 +52,7 @@
 		</div>
 		<div class="col-sm-3"></div>
 		<div class="col-sm-1">
-			<a class="btn btn-default" href="<c:url value='/board/BoardEdit'/>">글쓰기</a>
+			<a class="btn btn-default" href="<c:url value='/board/insert'/>">글쓰기</a>
 		</div>
 
 	</div>

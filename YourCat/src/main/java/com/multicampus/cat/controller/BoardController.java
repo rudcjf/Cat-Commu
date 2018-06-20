@@ -26,6 +26,7 @@ import com.multicampus.cat.service.BoardService;
 public class BoardController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+	
 	@Autowired
 	private BoardService service;
 	/**
@@ -43,17 +44,35 @@ public class BoardController {
 		if("BoardList".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
 			resultList = (List<Object>) service.getList(paramMap);
+			
 		} else if ("BoardRead".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
 			resultMap =  (Map<String, Object>) service.getObject(paramMap);
+			
 		} else if ("BoardEdit".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
 			resultMap =  (Map<String, Object>) service.getObject(paramMap);
+			
+		}else if ("BoardDelete".equalsIgnoreCase(action)) {
+			viewName = viewName + "BoardList";
+			resultList =   (List<Object>) service.deleteObject(paramMap);
+			
+		} else if ("BoardInsert".equalsIgnoreCase(action)) {
+			viewName = viewName + "BoardList";
+			service.createObject(paramMap);
+			resultList = (List<Object>) service.getList(paramMap);
+			
 		}else if ("BoardUpdate".equalsIgnoreCase(action)) {
-			viewName = viewName + action;
-			//resultMap =  (Map<String, Object>) service.getEditObject(paramMap);
+			viewName = viewName + "BoardRead";
+			service.updateObject(paramMap);
+			resultMap =  (Map<String, Object>) service.getObject(paramMap);
+			
 		}
 		
+		/*else if ("merge".equalsIgnoreCase(action)) {
+			viewName = viewName + "BoardList";
+			resultMap = (Map<String, Object>) service.saveObject(paramMap);
+		}*/
 		
 		modelandView.setViewName(viewName);
 		modelandView.addObject("resultMap", resultMap);
