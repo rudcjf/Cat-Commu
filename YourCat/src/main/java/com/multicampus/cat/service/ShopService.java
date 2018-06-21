@@ -27,6 +27,11 @@ public class ShopService {
 		return resultObject;
 	}
 	
-	
+	public Object createObject(Object dataMap) {
+		String sqlMapId = "shop.insert";
+		Object resultObject =  dao.createObject(sqlMapId, dataMap);
+		
+		return resultObject;
+	}
 	
 }

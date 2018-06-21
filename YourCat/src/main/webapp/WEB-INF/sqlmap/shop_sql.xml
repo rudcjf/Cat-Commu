@@ -30,5 +30,32 @@ ON      T1.ITEM_SEQ = T2.ITEM_SEQ
 		]]>
 		
 	</select>  
+	
+	<insert id="insert" parameterType="Map">
+		 INSERT INTO CAT_BUY(
+				BUY_SEQ	
+				, BUY_METHOD	
+				, BUY_PRICE
+				, BUY_COUNT	
+				, BUY_NAME	
+				, BUY_TEL
+				, BUY_DELIVERY
+				, BUY_DELIVERYMEMO
+				, MEMBER_ID
+				
+			)
+			values(
+				BUY_SEQ.NEXTVAL	
+				, #{buyMethod}	
+				, #{buyPrice}
+				, #{buyCount}
+				, #{buyName}	
+				, #{buyTel}	
+				, #{buyDelivery}
+				, #{buyMemo}
+				, 'SYSTEM@naver.com'<!-- #{MEMBER_ID} 	SESSION ID -->
+			)
+	
+	</insert>
 
 </mapper>

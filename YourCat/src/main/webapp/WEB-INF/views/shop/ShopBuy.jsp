@@ -13,7 +13,7 @@
 						<span>배송지 정보</span>
 					</h3>
 					<hr>
-					<form class="form-horizontal" method="post" name="buyInfo" id="buyInfo" enctype="multipart/form-data" action="#">
+					<form class="form-horizontal" method="post" name="buyInfo" id="buyInfo"  action="<c:url value='/shop/insert' />">
 						<div class="form-group">
 							<label class="control-label col-sm-3">이름</label>
 							<div class="col-md-7 col-sm-9">
@@ -35,7 +35,7 @@
 						<div class="form-group">
 							<label class="control-label col-sm-3">주소 </label>
 								<div class="col-md-8 col-sm-9">
-								<input type="text" class="form-control" name="buyAddr" id="buyAddr" value="" >
+								<input type="text" class="form-control" name="buyDelivery" id="buyAddr" value="" >
 							</div>
 						</div>
 						<div class="form-group">
@@ -82,7 +82,7 @@
 							<label class="control-label col-sm-3">결제방법</label>
 							<div class="col-md-7 col-sm-8">
 								<div class="input-group">
-									<select name="fruit">
+									<select name="buyMethod">
 									  <option value="0">선택하시오</option>
 									  <option value="1">신용카드</option>
 									  <option value="2" >payco</option>
