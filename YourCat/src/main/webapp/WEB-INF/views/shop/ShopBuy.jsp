@@ -49,10 +49,10 @@
 					</h3>
 					<hr>
 						<div class="form-group">
-							<label class="control-label col-sm-3"><img alt="" src="<c:url value='/resources/image/item_cat03.jpg'/>" height="100" ></label>
+							<label class="control-label col-sm-3"><img alt="" src="<c:url value='/resources/image/${resultMap.ITEM_IMG_NAME}.jpg'/>" height="100" ></label>
 							<div class="col-md-7 col-sm-8">
 								<div class="input-group">
-									<input type="text" class="form-control" name="buyItem" id="buyItem"  value="상품명****" readonly>
+									<input type="text" class="form-control" name="buyItem" id="buyItem"  value="${resultMap.ITEM_NAME}" readonly>
 								</div>
 							</div>
 						</div>
@@ -60,7 +60,7 @@
 						<label class="control-label col-sm-3">수량</label>
 							<div class="col-md-7 col-sm-8">
 								<div class="input-group">
-									<input type="text" class="form-control" name="buyCount" id="buyCount" value="" readonly>
+									<input type="text" class="form-control" name="buyCount" id="buyCount" value="${paramMap.buyCount}" readonly>
 								</div>
 							</div>
 						</div>
@@ -70,7 +70,7 @@
 							<label class="control-label col-sm-3">상품금액</label>
 							<div class="col-md-7 col-sm-8">
 								<div class="input-group">
-									<input type="text" class="form-control" name="buyPrice" id="buyPrice" value="" readonly>
+									<input type="text" class="form-control" name="buyPrice" id="buyPrice" value="${paramMap.totalPrice}" readonly>
 								</div>
 							</div>
 						</div>

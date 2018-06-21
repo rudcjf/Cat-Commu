@@ -26,7 +26,7 @@ $(document).ready(function() {
 				<div class="form-group">
 					<img alt="" src="<c:url value='/resources/image/${resultMap.ITEM_IMG_NAME}.jpg'/>" height="370" >
 				</div>
-					<form class="form-horizontal" method="post" name="buyInfo" id="buyInfo" enctype="multipart/form-data" action="<c:url value='/shop/ShopBuy'/>">
+					<form class="form-horizontal" method="post" name="buyInfo" id="buyInfo" action="<c:url value="/shop/ShopBuy?ITEM_SEQ=${resultMap.ITEM_SEQ}" />">
 						<div class="form-group">
 							<label class="control-label col-sm-3">상품명</label>
 							<div class="col-md-7 col-sm-9">
@@ -66,7 +66,7 @@ $(document).ready(function() {
 							<label class="control-label col-sm-3">수량</label>
 							<div class="col-md-7 col-sm-8">
 								<div class="input-group">
-									 <input type="number" class="form-control" id="buyCount" value="1" min="1" max="5">
+									 <input type="number" class="form-control" name="buyCount" id="buyCount" value="1" min="1" max="5">
 								</div>
 							</div>
 						</div>
