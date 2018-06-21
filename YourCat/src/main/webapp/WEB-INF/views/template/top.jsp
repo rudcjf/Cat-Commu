@@ -40,6 +40,7 @@
         </li>
         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
       </ul>
+            <input type="hidden" name="memberId" value="${principalName}">
     </div>
   </div>
 </nav>

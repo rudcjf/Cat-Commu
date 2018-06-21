@@ -31,11 +31,11 @@ public class MemberController {
 		List<Object> resultList = new ArrayList<Object>();
 		
 		if("SignUp".equalsIgnoreCase(action)) {
-			viewName = viewName + action;
+			viewName = "/member/"+"Login";
 			service.createObject(paramMap);
 		} else if ("MyInfo".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
-			//resultMap =  (Map<String, Object>) service.getObject(paramMap);
+			resultMap =  (Map<String, Object>) service.getObject(paramMap);
 		} else if ("MyInfoSave".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
 			

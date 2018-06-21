@@ -13,7 +13,7 @@
 					</h1>
 					<hr>
 					<form class="form-horizontal" method="post" name="signup"
-						id="signup" enctype="multipart/form-data">
+						id="signup" action ="/member/MyInfoSave">
 						<div class="form-group">
 							<label class="control-label col-sm-3">Email ID</label>
 							<div class="col-md-8 col-sm-9">

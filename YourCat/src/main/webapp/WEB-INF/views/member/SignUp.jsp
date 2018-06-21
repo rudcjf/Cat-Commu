@@ -44,7 +44,7 @@ $(function(){
 					</h1>
 					<hr>
 					<form class="form-horizontal" method="post" name="signup"
-						id="signup" enctype="multipart/form-data" action="<c:url value='/member/SignUp' />">
+						id="signup"  action="<c:url value='/member/SignUp' />">
 						<div class="form-group">
 							<label class="control-label col-sm-3">Email ID <span
 								class="text-danger">*</span></label>
@@ -52,7 +52,7 @@ $(function(){
 								<div class="input-group">
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-envelope"></i></span> <input type="email"
-										class="form-control" name="emailid" id="emailid"
+										class="form-control" name="emilId" id="emilId"
 										placeholder="Enter your Email ID" value="">
 								</div>
 								<small> Your Email Id is being used for ensuring the
@@ -88,8 +88,8 @@ $(function(){
 							<label class="control-label col-sm-3">Full Name <span
 								class="text-danger">*</span></label>
 							<div class="col-md-8 col-sm-9">
-								<input type="text" class="form-control" name="mem_name"
-									id="mem_name"  value="">
+								<input type="text" class="form-control" name="name"
+									id="name"  value="">
 							</div>
 						</div>
 
@@ -100,7 +100,7 @@ $(function(){
 								<div class="input-group">
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-phone"></i></span> <input type="text"
-										class="form-control" name="contactnum" id="contactnum"
+										class="form-control" name="tel" id="tel"
 										 value="">
 								</div>
 							</div>
@@ -124,9 +124,12 @@ $(function(){
 							<div class="col-md-5 col-sm-8">
 								<div class="input-group">
 									<span class="input-group-addon"><i
-										class="glyphicon glyphicon-home"></i></span> <input type="text"
-										class="form-control" name="hasCat" id="hasCat"
-										 value="">
+										class="glyphicon glyphicon-home"></i></span> 
+										<select name="hasCat" id="hasCat">
+											<option value="Y">예</option>
+											<option value="N">아니요</option>
+										</select>
+										
 								</div>
 							</div>
 						</div>
