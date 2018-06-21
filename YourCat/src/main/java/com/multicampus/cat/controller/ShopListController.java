@@ -25,50 +25,6 @@ public class ShopListController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ShopListController.class);
 	
-//	/**
-//	 * Simply selects the home view to render by returning its name.
-//	 */
-//	@RequestMapping(value = "/shoplist", method = RequestMethod.GET)
-//	public String home(Locale locale, Model model) {
-//		logger.info("Welcome home! The client locale is {}.", locale);
-//		
-//		Date date = new Date();
-//		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-//		
-//		String formattedDate = dateFormat.format(date);
-//		
-//		model.addAttribute("serverTime", formattedDate );
-//		
-//		return "/shop/ShopList";
-//	}
-//	
-//	@RequestMapping(value = "/shopRead", method = RequestMethod.GET)
-//	public String read(Locale locale, Model model) {
-//		logger.info("Welcome home! The client locale is {}.", locale);
-//		
-//		Date date = new Date();
-//		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-//		
-//		String formattedDate = dateFormat.format(date);
-//		
-//		model.addAttribute("serverTime", formattedDate );
-//		
-//		return "/shop/ShopRead";
-//	}
-//	
-//	@RequestMapping(value = "/shop/buyItem", method = RequestMethod.POST)
-//	public String buy(Locale locale, Model model) {
-//		logger.info("Welcome home! The client locale is {}.", locale);
-//		
-//		Date date = new Date();
-//		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-//		
-//		String formattedDate = dateFormat.format(date);
-//		
-//		model.addAttribute("serverTime", formattedDate );
-//		
-//		return "/shop/ShopBuy";
-//	}
 	@Autowired
 	private ShopService service;
 	/**
@@ -95,6 +51,11 @@ public class ShopListController {
 			viewName = viewName + action;
 			resultMap =  (Map<String, Object>) service.getObject(paramMap);
 			modelandView.addObject("paramMap", paramMap);
+			
+		} else if("insert".equalsIgnoreCase(action)) {
+			viewName = viewName + "ShopList";
+			service.createObject(paramMap);
+			resultMap =  (Map<String, Object>) service.createObject(paramMap);
 			
 		}
 		

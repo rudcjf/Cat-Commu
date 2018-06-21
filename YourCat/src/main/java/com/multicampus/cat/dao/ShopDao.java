@@ -22,6 +22,11 @@ public class ShopDao {
 		return result;
 	}
 
+	public Object createObject(String sqlMapId, Object dataMap) {
+		Integer result = sqlSession.insert((String)sqlMapId, dataMap);
+		return result;
+	}
+
 	public Object saveObject(String sqlMapId, Object dataMap) {
 		Integer result = sqlSession.insert((String)sqlMapId, dataMap);
 		
@@ -34,4 +39,5 @@ public class ShopDao {
 		return result;
 	}
 
+	
 }
