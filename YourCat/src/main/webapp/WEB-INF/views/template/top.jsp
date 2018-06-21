@@ -17,7 +17,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="<c:url value='/'/>">HOME</a></li>
         <li><a href="<c:url value='/board/BoardList'/>">BOARD</a></li>
-        <li><a href="<c:url value='/shoplist'/>">SHOP</a></li>
+        <li><a href="<c:url value='/shop/ShopList'/>">SHOP</a></li>
         <li><a href="<c:url value='/#contact'/>">CONTACT</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">MEMBER

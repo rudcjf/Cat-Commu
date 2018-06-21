@@ -6,7 +6,7 @@
 <div class="main">
 	<div class="container">
 		<% String host = request.getContextPath(); %>
-		<form action="<%=host%>/page_member/LoginStatus.jsp" method="post">
+		<form action="<c:url value='/j_spring_security_check' />" method="post">
 			<div class="row">
 				<h2 style="text-align: center">Login with Social Media or
 					Manually</h2>

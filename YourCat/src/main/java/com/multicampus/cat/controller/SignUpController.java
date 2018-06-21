@@ -27,7 +27,7 @@ public class SignUpController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@Autowired
+	/*@Autowired
 	private SignUpService service;
 	
 	@RequestMapping(value = "/member/{action}", method = {RequestMethod.GET, RequestMethod.POST})
@@ -57,5 +57,5 @@ public class SignUpController {
 		return modelandView;
 		
 	}
-	
+	*/
 }
