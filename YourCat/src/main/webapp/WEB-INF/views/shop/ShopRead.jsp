@@ -14,7 +14,7 @@
 				<div class="form-group">
 					<img alt="" src="<c:url value='/resources/image/item_cat03.jpg'/>" height="370" >
 				</div>
-					<form class="form-horizontal" method="post" name="buyInfo" id="buyInfo" enctype="multipart/form-data" action="<c:url value='/shop/buyItem'/>">
+					<form class="form-horizontal" method="post" name="buyInfo" id="buyInfo" enctype="multipart/form-data" action="<c:url value='/shop/ShopBuy'/>">
 						<div class="form-group">
 							<label class="control-label col-sm-3">상품명</label>
 							<div class="col-md-7 col-sm-9">
