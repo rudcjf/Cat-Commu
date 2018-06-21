@@ -1,4 +1,4 @@
-/*package com.multicampus.cat.dao;
+package com.multicampus.cat.dao;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,4 +35,3 @@ public class ShopDao {
 	}
 
 }
-*/
