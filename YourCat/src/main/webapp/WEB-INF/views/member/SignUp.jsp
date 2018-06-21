@@ -44,7 +44,7 @@ $(function(){
 					</h1>
 					<hr>
 					<form class="form-horizontal" method="post" name="signup"
-						id="signup" enctype="multipart/form-data" action="<c:url value='/member/SignUpStatus' />">
+						id="signup" enctype="multipart/form-data" action="<c:url value='/member/SignUp' />">
 						<div class="form-group">
 							<label class="control-label col-sm-3">Email ID <span
 								class="text-danger">*</span></label>
@@ -88,8 +88,8 @@ $(function(){
 							<label class="control-label col-sm-3">Full Name <span
 								class="text-danger">*</span></label>
 							<div class="col-md-8 col-sm-9">
-								<input type="text" class="form-control" name="name"
-									id="name" placeholder="Enter your Name here" value="">
+								<input type="text" class="form-control" name="mem_name"
+									id="mem_name"  value="">
 							</div>
 						</div>
 
@@ -101,35 +101,45 @@ $(function(){
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-phone"></i></span> <input type="text"
 										class="form-control" name="contactnum" id="contactnum"
-										placeholder="Enter your Primary contact no." value="">
+										 value="">
 								</div>
 							</div>
 						</div>
-
+						
 						<div class="form-group">
-							<label class="control-label col-sm-3">Residence</label>
+							<label class="control-label col-sm-3">Address <span
+								class="text-danger">*</span></label>
 							<div class="col-md-5 col-sm-8">
-								<div class="input-group" id="residence">
-									<label class="radio-inline"> 
-										<input type="radio"	name="residence" value="seoul">Seoul</label> 
-									<label class="radio-inline">
-										<input type="radio" name="residence" value="incheon">Incheon</label> 
-									<label class="radio-inline">
-										<input type="radio"	name="residence" value="jeju">Jeju</label>
-
+								<div class="input-group">
+									<span class="input-group-addon"><i
+										class="glyphicon glyphicon-home"></i></span> <input type="text"
+										class="form-control" name="address" id="address"
+										 value="">
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-3">고양이 유무 </label>
+							<div class="col-md-5 col-sm-8">
+								<div class="input-group">
+									<span class="input-group-addon"><i
+										class="glyphicon glyphicon-home"></i></span> <input type="text"
+										class="form-control" name="hasCat" id="hasCat"
+										 value="">
 								</div>
 							</div>
 						</div>
 						
 						<div class="form-group">
 							<label class="control-label col-sm-3">Hobby</label>
-							<div class="col-md-8 col-sm-9">
-								<select class="form-control" name="hobby">
-									<option value="music">Music</option>
-									<option value="movie">Movie</option>
-									<option value="sleep">Sleep</option>
-									
-								</select>
+							<div class="col-md-5 col-sm-8">
+								<div class="input-group">
+									<span class="input-group-addon"><i
+										class="glyphicon glyphicon-home"></i></span> <input type="text"
+										class="form-control" name="hobby" id="hobby"
+										 value="">
+								</div>
 							</div>
 						</div>
 

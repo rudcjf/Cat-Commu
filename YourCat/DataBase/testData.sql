@@ -1,5 +1,5 @@
---sequence ª˝º∫
---create sequence AUT_SEQ start with 1 increment BY 1 maxvalue 1000; ±««—¿∫ π¯»£∑Œ
+--sequence ÏÉùÏÑ±
+--create sequence AUT_SEQ start with 1 increment BY 1 maxvalue 1000; Í∂åÌïúÏùÄ Î≤àÌò∏Î°ú
 create sequence BOARD_SEQ start with 1 increment BY 1 maxvalue 1000;
 create sequence BOARD_IMG_SEQ start with 1 increment BY 1 maxvalue 1000;
 
@@ -9,14 +9,14 @@ create sequence ITEM_CATE_SEQ start with 1 increment BY 1 maxvalue 1000;
 
 create sequence BUY_SEQ start with 1 increment BY 1 maxvalue 1000;
 
---±««— º≥¡§(USER, ADMIN, SYSTEM)
+--Í∂åÌïú ÏÑ§Ï†ï(USER, ADMIN, SYSTEM)
 INSERT INTO CAT_AUTHORITY
      VALUES('UUID-1111-0000', 'SYSTEM');
 INSERT INTO CAT_AUTHORITY
      VALUES('UUID-1111-0001', 'ADMIN');
 INSERT INTO CAT_AUTHORITY
      VALUES('UUID-1111-0002', 'USER');
---±‚√  »∏ø¯ æ∆¿Ãµ(MEMBER_ID, PASSWORD, MEMBER_NAME, TEL, RESIDENCE, HASCAT, HOBBY, MEMBER_STATUS)
+--Í∏∞Ï¥à ÌöåÏõê ÏïÑÏù¥Îîî(MEMBER_ID, PASSWORD, MEMBER_NAME, TEL, RESIDENCE, HASCAT, HOBBY, MEMBER_STATUS)
 INSERT INTO CAT_MEMBER
     VALUES('SYSTEM@naver.com', 'SYSTEM', 'SYSTEM', '02-000-0000', 'SEOUL', 'YES', 'SYSTEM', 'IN');
 INSERT INTO CAT_MEMBER
@@ -27,9 +27,9 @@ INSERT INTO CAT_MEMBER
 INSERT INTO CAT_MEMBER
     VALUES('KKK@naver.com', 'KKK', 'KKK', '02-000-1111', 'SEOUL', 'YES', 'SLEEP', 'OUT');
 INSERT INTO CAT_MEMBER
-    VALUES('MC_CHEA@naver.com', 'CHEA', 'MCπŒ√§', '02-000-2222', 'SEOUL', 'YES', 'SLEEP', 'IN');
+    VALUES('MC_CHEA@naver.com', 'CHEA', 'MCÎØºÏ±Ñ', '02-000-2222', 'SEOUL', 'YES', 'SLEEP', 'IN');
     
---»∏ø¯ ±««— ∞¸∞Ë
+--ÌöåÏõê Í∂åÌïú Í¥ÄÍ≥Ñ
 INSERT INTO CAT_MEMBER_AUT_REL
     VALUES('SYSTEM@naver.com', 'UUID-1111-0000');
 INSERT INTO CAT_MEMBER_AUT_REL
@@ -41,77 +41,77 @@ INSERT INTO CAT_MEMBER_AUT_REL
 INSERT INTO CAT_MEMBER_AUT_REL
     VALUES('MC_CHEA@naver.com', 'UUID-1111-0002');
     
--- ø¿¥√ ≤® ≥÷±‚
+-- Ïò§Îäò Í∫º ÎÑ£Í∏∞
 CREATE TABLE DATE_TEST (
 
 T_DATE DATE DEFAULT SYSDATE
 
 );
 
---∞‘Ω√±€ øπΩ√ (BOARD_SEQ, BOARD_TITLE, BOARD_CONTENTES, BOARD_STATUS,BOARD_DATE, BOARD_VIEWS,
+--Í≤åÏãúÍ∏Ä ÏòàÏãú (BOARD_SEQ, BOARD_TITLE, BOARD_CONTENTES, BOARD_STATUS,BOARD_DATE, BOARD_VIEWS,
 --            BOARD_LIKE,  MEMBER_ID)
 INSERT INTO CAT_BOARD
-    VALUES(BOARD_SEQ.NEXTVAL, '∞≥≥…¿Ã ¡Ææ∆¡Ææ∆','øÏøÕ æÓ∏∂æÓ∏∂«œ¥Á' ,'Y',SYSDATE, 10, 10, 'MING@naver.com');
+    VALUES(BOARD_SEQ.NEXTVAL, 'Í∞úÎÉ•Ïù¥ Ï†∏ÏïÑÏ†∏ÏïÑ','Ïö∞ÏôÄ Ïñ¥ÎßàÏñ¥ÎßàÌïòÎãπ' ,'Y',SYSDATE, 10, 10, 'MING@naver.com');
 INSERT INTO CAT_BOARD
-    VALUES(BOARD_SEQ.NEXTVAL, '≥…≥…¿Ã','≥…≥…' ,'Y',SYSDATE, 10, 10, 'MING@naver.com');
+    VALUES(BOARD_SEQ.NEXTVAL, 'ÎÉ•ÎÉ•Ïù¥','ÎÉ•ÎÉ•' ,'Y',SYSDATE, 10, 10, 'MING@naver.com');
 INSERT INTO CAT_BOARD
-    VALUES(BOARD_SEQ.NEXTVAL, '¡˝ªÁ≥ ¿˙∏Æ∞´','≈©»Ï' ,'n',SYSDATE, 10, 10, 'KKK@naver.com');
+    VALUES(BOARD_SEQ.NEXTVAL, 'ÏßëÏÇ¨ÎÜà Ï†ÄÎ¶¨Í∞ì','ÌÅ¨Ìù†' ,'n',SYSDATE, 10, 10, 'KKK@naver.com');
 INSERT INTO CAT_BOARD
-    VALUES(BOARD_SEQ.NEXTVAL, '∏ª«œ¥¬≥','ï˚æÍûS' ,'Y',SYSDATE, 10, 10, 'ADMIN@naver.com');
+    VALUES(BOARD_SEQ.NEXTVAL, 'ÎßêÌïòÎäîÎÜà','Î∫¥ÏñòÏñ≠' ,'Y',SYSDATE, 10, 10, 'ADMIN@naver.com');
 INSERT INTO CAT_BOARD
-    VALUES(BOARD_SEQ.NEXTVAL, 'æﬁπ´ªı «’ªÁ','∞°¥…?' ,'Y',SYSDATE, 10, 10, 'SYSTEM@naver.com');
+    VALUES(BOARD_SEQ.NEXTVAL, 'ÏïµÎ¨¥ÏÉà Ìï©ÏÇ¨','Í∞ÄÎä•?' ,'Y',SYSDATE, 10, 10, 'SYSTEM@naver.com');
 INSERT INTO CAT_BOARD
-    VALUES(BOARD_SEQ.NEXTVAL, '§∏§°§§','¡π±Õ' ,'Y',SYSDATE, 10, 10, 'MC_CHEA@naver.com');
+    VALUES(BOARD_SEQ.NEXTVAL, '„Öà„Ñ±„Ñ¥','Ï°∏Í∑Ä' ,'Y',SYSDATE, 10, 10, 'MC_CHEA@naver.com');
     
---ªÛ«∞(ITEM_SEQ, ITEM_NAME, PRICE, DTAIL, COUNT, BUY_SEQ)
+--ÏÉÅÌíà(ITEM_SEQ, ITEM_NAME, PRICE, DTAIL, COUNT, BUY_SEQ)
 INSERT INTO CAT_ITEM
-    VALUES(ITEM_SEQ.NEXTVAL, 'ªÁ∑·1',5000 ,'π‰π‰',50, NULL );
+    VALUES(ITEM_SEQ.NEXTVAL, 'ÏÇ¨Î£å1',5000 ,'Î∞•Î∞•',50, NULL );
 INSERT INTO CAT_ITEM
-    VALUES(ITEM_SEQ.NEXTVAL, 'ªÁ∑·2',6000 ,'π‰π‰',50, NULL );
+    VALUES(ITEM_SEQ.NEXTVAL, 'ÏÇ¨Î£å2',6000 ,'Î∞•Î∞•',50, NULL );
 INSERT INTO CAT_ITEM
-    VALUES(ITEM_SEQ.NEXTVAL, 'ªÁ∑·3',5500 ,'π‰π‰',50, NULL );
+    VALUES(ITEM_SEQ.NEXTVAL, 'ÏÇ¨Î£å3',5500 ,'Î∞•Î∞•',50, NULL );
 INSERT INTO CAT_ITEM
-    VALUES(ITEM_SEQ.NEXTVAL, 'ªÁ∑·4',7000 ,'π‰π‰',50, NULL );
+    VALUES(ITEM_SEQ.NEXTVAL, 'ÏÇ¨Î£å4',7000 ,'Î∞•Î∞•',50, NULL );
 INSERT INTO CAT_ITEM
-    VALUES(ITEM_SEQ.NEXTVAL, 'ªÁ∑·5',7000 ,'π‰π‰',50, NULL );
+    VALUES(ITEM_SEQ.NEXTVAL, 'ÏÇ¨Î£å5',7000 ,'Î∞•Î∞•',50, NULL );
 INSERT INTO CAT_ITEM
-    VALUES(ITEM_SEQ.NEXTVAL, 'ªÁ∑·6',7000 ,'π‰π‰',50, NULL );
+    VALUES(ITEM_SEQ.NEXTVAL, 'ÏÇ¨Î£å6',7000 ,'Î∞•Î∞•',50, NULL );
     
 INSERT INTO CAT_ITEM
-    VALUES(ITEM_SEQ.NEXTVAL, '¿Â≥≠∞®1',5000 ,'¿Â≥≠¿Â≥≠',50, NULL );
+    VALUES(ITEM_SEQ.NEXTVAL, 'Ïû•ÎÇúÍ∞ê1',5000 ,'Ïû•ÎÇúÏû•ÎÇú',50, NULL );
     
---ªÛ«∞ ∫–∑˘(ITEM_CATE_SEQ, ITEM_CATE_NAME)
+--ÏÉÅÌíà Î∂ÑÎ•ò(ITEM_CATE_SEQ, ITEM_CATE_NAME)
 INSERT INTO CAT_ITEM_CATE
-    VALUES(ITEM_CATE_SEQ.NEXTVAL, 'ªÁ∑·');
+    VALUES(ITEM_CATE_SEQ.NEXTVAL, 'ÏÇ¨Î£å');
 INSERT INTO CAT_ITEM_CATE
-    VALUES(ITEM_CATE_SEQ.NEXTVAL, '¿Â≥≠∞®');
+    VALUES(ITEM_CATE_SEQ.NEXTVAL, 'Ïû•ÎÇúÍ∞ê');
 INSERT INTO CAT_ITEM_CATE
-    VALUES(ITEM_CATE_SEQ.NEXTVAL, '»≠¿ÂΩ«');
+    VALUES(ITEM_CATE_SEQ.NEXTVAL, 'ÌôîÏû•Ïã§');
 INSERT INTO CAT_ITEM_CATE
-    VALUES(ITEM_CATE_SEQ.NEXTVAL, 'ƒπ≈∏øˆ');
+    VALUES(ITEM_CATE_SEQ.NEXTVAL, 'Ï∫£ÌÉÄÏõå');
 INSERT INTO CAT_ITEM_CATE
-    VALUES(ITEM_CATE_SEQ.NEXTVAL, '«œøÏΩ∫');
+    VALUES(ITEM_CATE_SEQ.NEXTVAL, 'ÌïòÏö∞Ïä§');
 INSERT INTO CAT_ITEM_CATE
-    VALUES(ITEM_CATE_SEQ.NEXTVAL, '±‚≈∏');
+    VALUES(ITEM_CATE_SEQ.NEXTVAL, 'Í∏∞ÌÉÄ');
     
---ªÛ«∞ ∫–∑˘ ∞¸∞Ë(ITEM_CATE_SEQ, ITEM_SEQ)
-INSERT INTO CAT_ITEM_CATE_REL -- ªÁ∑·
-    VALUES(4,7);
+--ÏÉÅÌíà Î∂ÑÎ•ò Í¥ÄÍ≥Ñ(ITEM_CATE_SEQ, ITEM_SEQ)
+INSERT INTO CAT_ITEM_CATE_REL -- ÏÇ¨Î£å
+    VALUES(11,15);
 INSERT INTO CAT_ITEM_CATE_REL
-    VALUES(4,8);
+    VALUES(11,16);
 INSERT INTO CAT_ITEM_CATE_REL
-    VALUES(4,9);
+    VALUES(11,17);
 INSERT INTO CAT_ITEM_CATE_REL
-    VALUES(4,10);
+    VALUES(11,18);
 INSERT INTO CAT_ITEM_CATE_REL
-    VALUES(4,11);
+    VALUES(11,19);
 INSERT INTO CAT_ITEM_CATE_REL
-    VALUES(4,12);
+    VALUES(11,20);
     
-INSERT INTO CAT_ITEM_CATE_REL --¿Â≥≠∞®
-    VALUES(5,13);
+INSERT INTO CAT_ITEM_CATE_REL --Ïû•ÎÇúÍ∞ê
+    VALUES(12,21);
     
---ªÛ«∞ ¿ÃπÃ¡ˆ(ITEM_IMG_SEQ, ITEM_IMG_NAME)
+--ÏÉÅÌíà Ïù¥ÎØ∏ÏßÄ(ITEM_IMG_SEQ, ITEM_IMG_NAME)
 INSERT INTO CAT_ITEM_IMG
     VALUES(ITEM_IMG_SEQ.NEXTVAL,'item_cat01');
 INSERT INTO CAT_ITEM_IMG
@@ -141,19 +141,19 @@ INSERT INTO CAT_ITEM_IMG
 INSERT INTO CAT_ITEM_IMG
     VALUES(ITEM_IMG_SEQ.NEXTVAL,'cat02');
 
---ªÛ«∞¿ÃπÃ¡ˆ ∞¸∞Ë(ITEM_CATE_SEQ, ITEM_SEQ)
+--ÏÉÅÌíàÏù¥ÎØ∏ÏßÄ Í¥ÄÍ≥Ñ(ITEM_CATE_SEQ, ITEM_SEQ)
 INSERT INTO CAT_ITEM_IMG_REL
-    VALUES(2,7);
+    VALUES(16,15);
 INSERT INTO CAT_ITEM_IMG_REL
-    VALUES(3,8);
+    VALUES(17,16);
 INSERT INTO CAT_ITEM_IMG_REL
-    VALUES(4,9);
+    VALUES(18,17);
 INSERT INTO CAT_ITEM_IMG_REL
-    VALUES(5,10);
+    VALUES(19,18);
 INSERT INTO CAT_ITEM_IMG_REL
-    VALUES(6,11);
+    VALUES(20,19);
 INSERT INTO CAT_ITEM_IMG_REL
-    VALUES(7,12);
+    VALUES(21,20);
     
-INSERT INTO CAT_ITEM_IMG_REL --¿Â≥≠∞®
-    VALUES(7,13);
+INSERT INTO CAT_ITEM_IMG_REL --Ïû•ÎÇúÍ∞ê
+    VALUES(21,21);

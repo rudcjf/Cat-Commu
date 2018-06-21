@@ -32,12 +32,18 @@ public class MemberController {
 		
 		if("SignUp".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
+			service.createObject(paramMap);
 		} else if ("MyInfo".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
-			resultList = (List<Object>) service.getList(paramMap);
+			//resultMap =  (Map<String, Object>) service.getObject(paramMap);
 		} else if ("MyInfoSave".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
-			resultList = (List<Object>) service.getList(paramMap);
+			
+			
+		}else if ("goSignUp".equalsIgnoreCase(action)) {
+			viewName = viewName + "SignUp";
+			//resultList = (List<Object>) service.getList(paramMap);
+			
 			
 		}
 		

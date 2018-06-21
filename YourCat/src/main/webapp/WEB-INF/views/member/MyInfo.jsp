@@ -8,7 +8,6 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<section>
 					<h1 class="entry-title">
 						<span>My Info</span>
 					</h1>
@@ -16,14 +15,13 @@
 					<form class="form-horizontal" method="post" name="signup"
 						id="signup" enctype="multipart/form-data">
 						<div class="form-group">
-							<label class="control-label col-sm-3">Email ID <span
-								class="text-danger">*</span></label>
+							<label class="control-label col-sm-3">Email ID</label>
 							<div class="col-md-8 col-sm-9">
 								<div class="input-group">
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-envelope"></i></span> <input type="email"
 										class="form-control" name="emailid" id="emailid"
-										placeholder="Enter your Email ID" value="" disabled>
+										 value="${resultMap.MEMBER_ID}" readonly>
 								</div>
 								<small> Your Email Id is being used for ensuring the
 									security of your account, authorization and access recovery. </small>
@@ -31,8 +29,7 @@
 						</div>
 
 						<div class="form-group">
-							<label class="control-label col-sm-3">Set Password <span
-								class="text-danger">*</span></label>
+							<label class="control-label col-sm-3">Set Password </label>
 							<div class="col-md-5 col-sm-8">
 								<div class="input-group">
 									<span class="input-group-addon"><i
@@ -43,8 +40,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-sm-3">Confirm Password <span
-								class="text-danger">*</span></label>
+							<label class="control-label col-sm-3">Confirm Password </label>
 							<div class="col-md-5 col-sm-8">
 								<div class="input-group">
 									<span class="input-group-addon"><i
@@ -55,28 +51,62 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-sm-3">Full Name <span
-								class="text-danger">*</span></label>
+							<label class="control-label col-sm-3">Full Name </label>
 							<div class="col-md-8 col-sm-9">
 								<input type="text" class="form-control" name="mem_name"
-									id="mem_name" placeholder="Enter your Name here" value="">
+									id="mem_name"  value="${resultMap.MEMBER_Name}">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="control-label col-sm-3">Contact No. <span
-								class="text-danger">*</span></label>
+							<label class="control-label col-sm-3">Contact No. </label>
 							<div class="col-md-5 col-sm-8">
 								<div class="input-group">
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-phone"></i></span> <input type="text"
 										class="form-control" name="contactnum" id="contactnum"
-										placeholder="Enter your Primary contact no." value="">
+										 value="${resultMap.MEMBER_TEL}">
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-3">Address </label>
+							<div class="col-md-8 col-sm-9">
+								<div class="input-group">
+									<span class="input-group-addon"><i
+										class="glyphicon glyphicon-home"></i></span> <input type="text"
+										class="form-control" name="address" id="address"
+										 value="${resultMap.MEMBER_RESIDENCE}">
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-3">고양이 유무 </label>
+							<div class="col-md-5 col-sm-8">
+								<div class="input-group">
+									<span class="input-group-addon"><i
+										class="glyphicon glyphicon-home"></i></span> <input type="text"
+										class="form-control" name="hasCat" id="hasCat"
+										 value="${resultMap.MEMBER_HASCAT}">
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-3">Hobby</label>
+							<div class="col-md-5 col-sm-8">
+								<div class="input-group">
+									<span class="input-group-addon"><i
+										class="glyphicon glyphicon-home"></i></span> <input type="text"
+										class="form-control" name="hobby" id="hobby"
+										 value="${resultMap.MEMBER_HOBBY}">
 								</div>
 							</div>
 						</div>
 
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label class="control-label col-sm-3">Profile Photo </label>
 							<div class="col-md-5 col-sm-8">
 								<div class="input-group">
@@ -86,7 +116,7 @@
 										placeholder="" aria-describedby="file_upload">
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 
 						<div class="form-group">

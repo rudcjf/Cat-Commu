@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ page session="true" %>
 <!-- Navbar Start-->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -23,19 +24,32 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">MEMBER
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-          <% String host = request.getContextPath(); %>
-		  <%
-			 String userID = (String)session.getAttribute("userID");
-			 if(userID == null){
-		  %>
-			<li><a href="<c:url value='/login'/>">Log in</a></li>
-		  <% }else{ %>
-			<li><a href="#"><%=userID%>님 접속</a></li>
-			<li><a href="<%=host%>/member/LoginDelete.jsp" class="btn-success">Logout</a></li>
-		<%} %>
+         
 			
-            <li><a href="<c:url value='/member/SignUp'/>">Sign Up</a></li>
-            <li><a href="<c:url value='/member/MyInfo'/>">My Info</a></li> 
+            
+            
+            <li><c:set var="principalName" value="${pageContext.request.userPrincipal.name}" /> 
+	            <i class="fa fa-user fa-fw"></i> ${principalName} <i class="fa fa-caret-down"></i> </li>
+	            
+             <li><a href=${principalName == null ? '/YourCat/member/goSignUp' : '/YourCat/member/MyInfo' }>
+	            ${principalName == null ? 'Sign Up' : 'My Info' }</a></li> 
+            <li>
+	            
+	            <a href=${principalName == null ? '/YourCat/loginForm' : '/YourCat/j_spring_security_logout' }>
+	            ${principalName == null ? 'Login' : 'Logout' }</a>
+            </li>
+	            
+	            
+             
+             
+          
+            
+            
+            
+            
+          
+                        
+                        
           </ul>
         </li>
         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>

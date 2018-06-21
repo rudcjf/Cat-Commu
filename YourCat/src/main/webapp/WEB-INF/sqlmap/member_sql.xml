@@ -5,26 +5,17 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="member">
-	<select id="list" resultType="Map" parameterType="Map" timeout="10">
+	<select id="read" resultType="Map" parameterType="Map" timeout="10">
 		select 
 			MEMBER_ID, MEMBER_NAME, MEMBER_TEL, MEMBER_RESIDENCE,
-            BOARD_LIKE,  MEMBER_ID
-        from CAT_BOARD
-		where BOARD_STATUS = 'Y'
-		order by BOARD_SEQ DESC
-	</select>
-	
-	<select id="read" resultType="Map" parameterType="Map">
-		 select 
-			*
-		from CAT_BOARD
-		<![CDATA[
-		        where BOARD_SEQ = #{BOARD_SEQ}
+            MEMBER_HASCAT,  MEMBER_HOBBY
+        from CAT_MEMBER
+        <![CDATA[
+		where MEMBER_ID = #{MEMBER_ID}
 		]]>
 		
-	</select> 
+	</select>
 	
-
 	 <update id="delete"  parameterType="Map">
 	    UPDATE CAT_BOARD SET
 			BOARD_STATUS = 'N'
@@ -42,26 +33,25 @@
 	</update>
 	
 	<insert id="insert" parameterType="Map">
-		 INSERT INTO CAT_BOARD(
-				BOARD_SEQ	
-				, BOARD_TITLE	
-				, BOARD_CONTENTS
-				, BOARD_STATUS	
-				, BOARD_DATE	
-				, BOARD_VIEWS
-				, BOARD_LIKE
-				, MEMBER_ID
+		 INSERT INTO CAT_MEMBER(
+				MEMBER_ID	
+				, MEMBER_PASSWORD	
+				, MEMBER_NAME
+				, MEMBER_TEL
+				, MEMBER_RESIDENCE	
+				, MEMBER_HASCAT
+				, MEMBER_HOBBY
+				, MEMBER_STATUS
 			)
 			values(
-				BOARD_SEQ.NEXTVAL	
+				#{boardTitle}	
 				, #{boardTitle}	
 				, #{boardContents}
-				,'Y'	
-				, SYSDATE	
-				, 0	
-				, 0
-				, 'SYSTEM'<!-- #{MEMBER_ID} 	SESSION ID -->
-			)
+				,#{boardTitle}	
+				, #{boardTitle}	
+				, #{boardTitle}
+				, #{boardTitle}
+				,'Y' 	
 	
 	</insert>
 	
