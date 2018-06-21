@@ -24,510 +24,200 @@
 	<!-- /탭 -->
 
 	<div class="tab-content">
-
 		<div id="menu1" class="tab-pane fade in active">
 			<h3>사료</h3>
-				<!-- 상품목록 -->
-	<div class="container container_items">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							ì¤í¬ëì³ &nbsp; <span class="badge badge_new">new</span>
+			<!-- 상품목록 -->
+				<div class="container container_items">
+					<div class="container">
+						<div class="row">
+							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
+							<c:choose>
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '사료'}">
+							
+									<div class="col-sm-4">
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												${resultData.ITEM_NAME} &nbsp; <span class="badge badge_new">new</span>
+											</div>
+											<div class="panel-body">
+												<a href="<c:url value='/shop/ShopRead' />"> <img
+													src="<c:url value='/resources/image/${resultData.ITEM_IMG_NAME}.jpg' />"
+													class="img-responsive" style="width: 100%" alt="Image"></a>
+											</div>
+											<div class="panel-footer">${resultData.ITEM_PRICE}</div>
+										</div>
+									</div>
+								
+								</c:when>
+							</c:choose>
+							</c:forEach>
 						</div>
-						<div class="panel-body">
-							<a href="<c:url value='/shopRead' />" > 
-							<img src="<c:url value='/resources/image/item_cat01.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ìº£íì</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat02.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ì¥ëê°</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat03.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-			</div>
+			<!-- /상품목록 -->
 		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ ì§</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat04.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ íì¥ì¤</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat05.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ ëª¨ì</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat06.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /상품목록 -->
-		</div>
+		
+		
+		
 		<div id="menu2" class="tab-pane fade">
 			<h3>장난감</h3>
 				<!-- 상품목록 -->
-	<div class="container container_items">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							ì¤í¬ëì³ &nbsp; <span class="badge badge_new">new</span>
+				<div class="container container_items">
+					<div class="container">
+						<div class="row">
+							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
+							<c:choose>
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '장난감'}">
+							
+									<div class="col-sm-4">
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												${resultData.ITEM_NAME} &nbsp; <span class="badge badge_new">new</span>
+											</div>
+											<div class="panel-body">
+												<a href="<c:url value='/shop/ShopRead' />"> <img
+													src="<c:url value='/resources/image/${resultData.ITEM_IMG_NAME}.jpg' />"
+													class="img-responsive" style="width: 100%" alt="Image"></a>
+											</div>
+											<div class="panel-footer">${resultData.ITEM_PRICE}</div>
+										</div>
+									</div>
+								
+								</c:when>
+							</c:choose>
+							</c:forEach>
 						</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat01.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ìº£íì</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat02.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ì¥ëê°</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat03.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ ì§</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat04.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ íì¥ì¤</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat05.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ ëª¨ì</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat06.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /상품목록 -->
+				<!-- /상품목록 -->
 		</div>
 		<div id="menu3" class="tab-pane fade">
 			<h3>화장실</h3>
 				<!-- 상품목록 -->
-	<div class="container container_items">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							ì¤í¬ëì³ &nbsp; <span class="badge badge_new">new</span>
+				<div class="container container_items">
+					<div class="container">
+						<div class="row">
+							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
+							<c:choose>
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '화장실'}">
+							
+									<div class="col-sm-4">
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												${resultData.ITEM_NAME} &nbsp; <span class="badge badge_new">new</span>
+											</div>
+											<div class="panel-body">
+												<a href="<c:url value='/shop/ShopRead' />"> <img
+													src="<c:url value='/resources/image/${resultData.ITEM_IMG_NAME}.jpg' />"
+													class="img-responsive" style="width: 100%" alt="Image"></a>
+											</div>
+											<div class="panel-footer">${resultData.ITEM_PRICE}</div>
+										</div>
+									</div>
+								
+								</c:when>
+							</c:choose>
+							</c:forEach>
 						</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat01.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ìº£íì</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat02.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ì¥ëê°</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat03.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ ì§</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat04.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ íì¥ì¤</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat05.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ ëª¨ì</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat06.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /상품목록 -->
+				<!-- /상품목록 -->
 		</div>
 		<div id="menu4" class="tab-pane fade">
 			<h3>캣타워</h3>
 				<!-- 상품목록 -->
-	<div class="container container_items">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							ì¤í¬ëì³ &nbsp; <span class="badge badge_new">new</span>
+				<div class="container container_items">
+					<div class="container">
+						<div class="row">
+							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
+							<c:choose>
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '캣타워'}">
+							
+									<div class="col-sm-4">
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												${resultData.ITEM_NAME} &nbsp; <span class="badge badge_new">new</span>
+											</div>
+											<div class="panel-body">
+												<a href="<c:url value='/shop/ShopRead' />"> <img
+													src="<c:url value='/resources/image/${resultData.ITEM_IMG_NAME}.jpg' />"
+													class="img-responsive" style="width: 100%" alt="Image"></a>
+											</div>
+											<div class="panel-footer">${resultData.ITEM_PRICE}</div>
+										</div>
+									</div>
+								
+								</c:when>
+							</c:choose>
+							</c:forEach>
 						</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat01.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ìº£íì</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat02.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ì¥ëê°</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat03.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ ì§</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat04.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ íì¥ì¤</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat05.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ ëª¨ì</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat06.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /상품목록 -->
+				<!-- /상품목록 -->
 		</div>
 		<div id="menu5" class="tab-pane fade">
 			<h3>하우스</h3>
 				<!-- 상품목록 -->
-	<div class="container container_items">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							ì¤í¬ëì³ &nbsp; <span class="badge badge_new">new</span>
+				<div class="container container_items">
+					<div class="container">
+						<div class="row">
+							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
+							<c:choose>
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '하우스'}">
+							
+									<div class="col-sm-4">
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												${resultData.ITEM_NAME} &nbsp; <span class="badge badge_new">new</span>
+											</div>
+											<div class="panel-body">
+												<a href="<c:url value='/shop/ShopRead' />"> <img
+													src="<c:url value='/resources/image/${resultData.ITEM_IMG_NAME}.jpg' />"
+													class="img-responsive" style="width: 100%" alt="Image"></a>
+											</div>
+											<div class="panel-footer">${resultData.ITEM_PRICE}</div>
+										</div>
+									</div>
+								
+								</c:when>
+							</c:choose>
+							</c:forEach>
 						</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat01.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ìº£íì</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat02.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ì¥ëê°</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat03.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ ì§</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat04.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ íì¥ì¤</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat05.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ ëª¨ì</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat06.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /상품목록 -->
+				<!-- /상품목록 -->
 		</div>
 		<div id="menu6" class="tab-pane fade">
 			<h3>기타</h3>
 				<!-- 상품목록 -->
-	<div class="container container_items">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							ì¤í¬ëì³ &nbsp; <span class="badge badge_new">new</span>
+				<div class="container container_items">
+					<div class="container">
+						<div class="row">
+							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
+							<c:choose>
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '기타'}">
+							
+									<div class="col-sm-4">
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												${resultData.ITEM_NAME} &nbsp; <span class="badge badge_new">new</span>
+											</div>
+											<div class="panel-body">
+												<a href="<c:url value='/shop/ShopRead' />"> <img
+													src="<c:url value='/resources/image/${resultData.ITEM_IMG_NAME}.jpg' />"
+													class="img-responsive" style="width: 100%" alt="Image"></a>
+											</div>
+											<div class="panel-footer">${resultData.ITEM_PRICE}</div>
+										</div>
+									</div>
+								
+								</c:when>
+							</c:choose>
+							</c:forEach>
 						</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat01.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ìº£íì</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat02.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ì¥ëê°</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat03.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ ì§</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat04.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ íì¥ì¤</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat05.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="panel panel-default">
-						<div class="panel-heading">ê³ ìì´ ëª¨ì</div>
-						<div class="panel-body">
-							<a href="#"> <img
-								src="<c:url value='/resources/image/item_cat06.jpg' />"
-								class="img-responsive" style="width: 100%" alt="Image"></a>
-						</div>
-						<div class="panel-footer">123456ì</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /상품목록 -->
+				<!-- /상품목록 -->
 		</div>
 	</div>
 

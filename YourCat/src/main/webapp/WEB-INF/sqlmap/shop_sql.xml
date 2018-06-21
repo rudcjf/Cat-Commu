@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="shop">
+	<select id="list" resultType="Map" parameterType="Map" timeout="10">
+		SELECT  T1.*, T2.ITEM_CATE_NAME
+FROM    (select  c1.*, cm.ITEM_IMG_NAME
+        from    CAT_ITEM C1 INNER JOIN (SELECT ITEM_SEQ, ITEM_IMG_NAME FROM CAT_ITEM_IMG C2 INNER JOIN CAT_ITEM_IMG_REL C3 ON C2.ITEM_IMG_SEQ = C3.ITEM_IMG_SEQ) Cm
+        ON      C1.ITEM_SEQ = Cm.ITEM_SEQ) T1 
+INNER JOIN (select  c1.*, cm2.ITEM_CATE_NAME
+        from    CAT_ITEM C1 INNER JOIN (SELECT ITEM_SEQ, ITEM_CATE_NAME FROM CAT_ITEM_CATE C4 INNER JOIN CAT_ITEM_CATE_REL C5 ON C4.ITEM_CATE_SEQ = C5.ITEM_CATE_SEQ) Cm2
+        ON      C1.ITEM_SEQ = Cm2.ITEM_SEQ) T2
+ON      T1.ITEM_SEQ = T2.ITEM_SEQ
+	</select>
+	
+	<!-- <select id="read" resultType="Map" parameterType="Map">
+		 select 
+			*
+		from CAT_BOARD
+		<![CDATA[
+		        where BOARD_SEQ = #{BOARD_SEQ}
+		]]>
+		
+	</select>  -->
+
+</mapper>
