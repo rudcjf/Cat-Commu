@@ -12,37 +12,37 @@ public class MemberService {
 	private MemberDao dao;
 	
 	public Object getList(Object dataMap) {
-		String sqlMapId = "board.list";
+		String sqlMapId = "member.list";
 		Object resultObject = dao.getList(sqlMapId, dataMap);
 		
 		return resultObject;
 	}
 
 	public Object getObject(Object dataMap) {
-		String sqlMapId = "board.read";
+		String sqlMapId = "member.read";
 		Object resultObject = dao.getObject(sqlMapId, dataMap);
 		
 		return resultObject;
 	}
 
 	public Object deleteObject(Object dataMap) {
-		String sqlMapId = "board.delete";
+		String sqlMapId = "member.delete";
 		Integer resultKey = (Integer) dao.deleteObject(sqlMapId, dataMap);
-		sqlMapId = "board.list";
+		sqlMapId = "member.list";
 		Object resultObject = dao.getList(sqlMapId, dataMap);
 		
 		return resultObject;
 	}
 	
 	public Object createObject(Object dataMap) {
-		String sqlMapId = "board.insert";
+		String sqlMapId = "member.insert";
 		Object resultObject =  dao.createObject(sqlMapId, dataMap);
 		
 		return resultObject;
 	}
 	
 	public Object updateObject(Object dataMap) {
-		String sqlMapId = "board.update";
+		String sqlMapId = "member.update";
 		Object resultObject = dao.updateObject(sqlMapId, dataMap);
 		
 		return resultObject;

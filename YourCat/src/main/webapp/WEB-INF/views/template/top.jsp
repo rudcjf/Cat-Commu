@@ -35,7 +35,7 @@
 		<%} %>
 			
             <li><a href="<c:url value='/member/SignUp'/>">Sign Up</a></li>
-            <li><a href="<c:url value='/myinfo'/>">My Info</a></li> 
+            <li><a href="<c:url value='/member/MyInfo'/>">My Info</a></li> 
           </ul>
         </li>
         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>

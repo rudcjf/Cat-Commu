@@ -32,46 +32,16 @@ public class MemberController {
 		
 		if("SignUp".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
-			
-		} else if ("SignUpStatus".equalsIgnoreCase(action)) {
-			viewName = viewName + action;
-			resultMap = (Map<String, Object>)service.getObject(paramMap);
-		} else if ("SignUpList".equalsIgnoreCase(action)) {
+		} else if ("MyInfo".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
 			resultList = (List<Object>) service.getList(paramMap);
-			
-		}else if("Login".equalsIgnoreCase(action)) {
-			viewName = "home" + "Main";
-			resultList = (List<Object>) service.getList(paramMap);
-			
-		} else if ("BoardRead".equalsIgnoreCase(action)) {
+		} else if ("MyInfoSave".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
-			resultMap =  (Map<String, Object>) service.getObject(paramMap);
-			
-		} else if ("BoardEdit".equalsIgnoreCase(action)) {
-			viewName = viewName + action;
-			resultMap =  (Map<String, Object>) service.getObject(paramMap);
-			
-		}else if ("BoardDelete".equalsIgnoreCase(action)) {
-			viewName = viewName + "BoardList";
-			resultList =   (List<Object>) service.deleteObject(paramMap);
-			
-		} else if ("BoardInsert".equalsIgnoreCase(action)) {
-			viewName = viewName + "BoardList";
-			service.createObject(paramMap);
 			resultList = (List<Object>) service.getList(paramMap);
-			
-		}else if ("BoardUpdate".equalsIgnoreCase(action)) {
-			viewName = viewName + "BoardRead";
-			service.updateObject(paramMap);
-			resultMap =  (Map<String, Object>) service.getObject(paramMap);
 			
 		}
 		
-		/*else if ("merge".equalsIgnoreCase(action)) {
-			viewName = viewName + "BoardList";
-			resultMap = (Map<String, Object>) service.saveObject(paramMap);
-		}*/
+		
 		
 		modelandView.setViewName(viewName);
 		modelandView.addObject("resultMap", resultMap);

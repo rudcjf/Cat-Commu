@@ -135,7 +135,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2018-06-18 15:55:01</creation_date>
-			<updated_date>2018-06-19 17:56:22</updated_date>
+			<updated_date>2018-06-21 15:05:27</updated_date>
 			<model_property>
 				<name>프로젝트명</name>
 				<value></value>
@@ -740,8 +740,8 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>MEMBER__TEL</logical_name>
-			<physical_name>MEMBER__TEL</physical_name>
+			<logical_name>MEMBER_TEL</logical_name>
+			<physical_name>MEMBER_TEL</physical_name>
 			<type>varchar(n)</type>
 		</word>
 	</dictionary>
@@ -1484,28 +1484,6 @@
 			<connections>
 				<relation>
 					<id>6</id>
-					<source>5</source>
-					<target>6</target>
-						<source_xp>-1</source_xp>
-						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
-						<color>
-							<r>0</r>
-							<g>0</g>
-							<b>0</b>
-						</color>
-					<child_cardinality>1..n</child_cardinality>
-					<parent_cardinality>0..1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name></name>
-					<on_delete_action>RESTRICT</on_delete_action>
-					<on_update_action>RESTRICT</on_update_action>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-				<relation>
-					<id>7</id>
 					<source>10</source>
 					<target>6</target>
 						<source_xp>-1</source_xp>
@@ -1526,6 +1504,28 @@
 					<referenced_column>null</referenced_column>
 					<referenced_complex_unique_key>null</referenced_complex_unique_key>
 				</relation>
+				<relation>
+					<id>7</id>
+					<source>5</source>
+					<target>6</target>
+						<source_xp>-1</source_xp>
+						<source_yp>-1</source_yp>
+						<target_xp>-1</target_xp>
+						<target_yp>-1</target_yp>
+						<color>
+							<r>0</r>
+							<g>0</g>
+							<b>0</b>
+						</color>
+					<child_cardinality>1..n</child_cardinality>
+					<parent_cardinality>0..1</parent_cardinality>
+					<reference_for_pk>true</reference_for_pk>
+					<name></name>
+					<on_delete_action>RESTRICT</on_delete_action>
+					<on_update_action>RESTRICT</on_update_action>
+					<referenced_column>null</referenced_column>
+					<referenced_complex_unique_key>null</referenced_complex_unique_key>
+				</relation>
 			</connections>
 			<physical_name>CAT_ITEM_CATE_REL</physical_name>
 			<logical_name>새 테이블</logical_name>
@@ -1537,7 +1537,7 @@
 				<normal_column>
 					<id>12</id>
 					<referenced_column>10</referenced_column>
-					<relation>6</relation>
+					<relation>7</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -1571,7 +1571,7 @@
 				<normal_column>
 					<id>13</id>
 					<referenced_column>32</referenced_column>
-					<relation>7</relation>
+					<relation>6</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>

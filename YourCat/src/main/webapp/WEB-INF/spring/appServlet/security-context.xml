@@ -7,7 +7,7 @@
     http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd">
 
 	<http auto-config="true" use-expressions="true">
-		<intercept-url pattern="/myinfo" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')" />
+		<intercept-url pattern="/myinfo" access="hasAnyRole('ROLE_ADMIN','ROLE_USER','ROLE_SYSTEM')" />
 		<intercept-url pattern="/shop/ShopList" access="permitAll()" />
 		<intercept-url pattern="/shop/ShopRead" access="permitAll()" />
 		<intercept-url pattern="/shop/ShopBuy" access="hasAnyRole('ROLE_USER')" />
@@ -15,6 +15,7 @@
 		<intercept-url pattern="/member/*" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
 		<intercept-url pattern="/shop/*" access="hasAnyRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/board/*" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')" />  
+		<intercept-url pattern="/*/*" access="hasAnyRole('ROLE_SYSTEM')" />  
 
 		<!-- logout -->
 		<logout logout-success-url="/" logout-url="/j_spring_security_logout" invalidate-session="true" delete-cookies="JSESSIONID" />
@@ -41,9 +42,10 @@
 				users-by-username-query="SELECT MEMBER_ID as username, MEMBER_PASSWORD as password, 1 as enabled
 										FROM CAT_MEMBER
 										WHERE MEMBER_ID = ?"
-				authorities-by-username-query="SELECT MEMBER_ID as username, AUT_SEQ as authority
-										FROM CAT_MEMBER_AUT_REL
-										WHERE MEMBER_ID = ?" 
+				authorities-by-username-query="SELECT MA.MEMBER_ID as username, A.AUT_NAME as authority
+												FROM CAT_MEMBER_AUT_REL MA INNER JOIN CAT_AUTHORITY A
+												ON MA.AUT_SEQ = A.AUT_SEQ
+												WHERE MEMBER_ID = ?" 
 			/>
 		</authentication-provider>
 	</authentication-manager>
