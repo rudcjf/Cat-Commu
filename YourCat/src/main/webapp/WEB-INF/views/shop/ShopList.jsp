@@ -40,7 +40,7 @@
 												${resultData.ITEM_NAME} &nbsp; <span class="badge badge_new">new</span>
 											</div>
 											<div class="panel-body">
-												<a href="<c:url value='/shop/ShopRead' />"> <img
+												<a href="<c:url value="/shop/ShopRead?ITEM_SEQ=${resultData.ITEM_SEQ}" />"> <img
 													src="<c:url value='/resources/image/${resultData.ITEM_IMG_NAME}.jpg' />"
 													class="img-responsive" style="width: 100%" alt="Image"></a>
 											</div>

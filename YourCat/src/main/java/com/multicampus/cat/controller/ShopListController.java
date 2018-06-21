@@ -89,7 +89,7 @@ public class ShopListController {
 			
 		} else if ("ShopRead".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
-		//	resultMap =  (Map<String, Object>) service.getObject(paramMap);
+			resultMap =  (Map<String, Object>) service.getObject(paramMap);
 			
 		} else if ("ShopBuy".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
