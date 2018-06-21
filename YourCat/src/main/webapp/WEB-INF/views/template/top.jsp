@@ -24,9 +24,6 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">MEMBER
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-         
-			
-            
             
             <li><c:set var="principalName" value="${pageContext.request.userPrincipal.name}" /> 
 	            <i class="fa fa-user fa-fw"></i> ${principalName} <i class="fa fa-caret-down"></i> </li>
@@ -38,17 +35,6 @@
 	            <a href=${principalName == null ? '/YourCat/loginForm' : '/YourCat/j_spring_security_logout' }>
 	            ${principalName == null ? 'Login' : 'Logout' }</a>
             </li>
-	            
-	            
-             
-             
-          
-            
-            
-            
-            
-          
-                        
                         
           </ul>
         </li>

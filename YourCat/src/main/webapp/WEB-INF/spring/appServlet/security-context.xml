@@ -11,6 +11,7 @@
 		<intercept-url pattern="/shop/ShopList" access="permitAll()" />
 		<intercept-url pattern="/shop/ShopRead" access="permitAll()" />
 		<intercept-url pattern="/shop/ShopBuy" access="hasAnyRole('ROLE_USER')" />
+		<intercept-url pattern="/shop/insert" access="hasAnyRole('ROLE_USER')" />
 		<intercept-url pattern="/*" access="permitAll()" />
 		<intercept-url pattern="/member/*" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
 		<intercept-url pattern="/shop/*" access="hasAnyRole('ROLE_ADMIN')" />
@@ -22,7 +23,7 @@
 		<csrf disabled="true"/>
 		
 		<!-- login -->
-		<form-login login-page="/login" login-processing-url="/j_spring_security_check" default-target-url="" authentication-failure-url="/loginForm?fail=true" 
+		<form-login login-page="/loginForm" login-processing-url="/j_spring_security_check" default-target-url="" authentication-failure-url="/loginForm?fail=true" 
 			username-parameter="username" password-parameter="password" />
 	
 	</http>
