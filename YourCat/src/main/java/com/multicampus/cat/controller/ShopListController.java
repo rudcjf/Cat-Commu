@@ -55,7 +55,7 @@ public class ShopListController {
 		} else if("insert".equalsIgnoreCase(action)) {
 			viewName = viewName + "ShopList";
 			service.createObject(paramMap);
-			resultMap =  (Map<String, Object>) service.createObject(paramMap);
+			resultList =   (List<Object>) service.getList(paramMap);
 			
 		}
 		
