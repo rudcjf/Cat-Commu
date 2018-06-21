@@ -2,6 +2,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
+<script>
+$(document).ready(function() {
+	var totalPrice = $("#buyCount").val()*$("#itemPrice").val();
+    $("#totalPrice").val(totalPrice);
+	$("#buyCount").click(function(event){
+        var totalPrice = $("#buyCount").val()*$("#itemPrice").val();
+        $("#totalPrice").val(totalPrice);
+       });
+     });
+
+</script>
+
 <!-- Main Start -->
 
 	<div class="container">
@@ -12,7 +24,7 @@
 						<span>제품 상세</span>
 					</h3>
 				<div class="form-group">
-					<img alt="" src="<c:url value='/resources/image/item_cat03.jpg'/>" height="370" >
+					<img alt="" src="<c:url value='/resources/image/${resultMap.ITEM_IMG_NAME}.jpg'/>" height="370" >
 				</div>
 					<form class="form-horizontal" method="post" name="buyInfo" id="buyInfo" enctype="multipart/form-data" action="<c:url value='/shop/ShopBuy'/>">
 						<div class="form-group">
@@ -62,7 +74,7 @@
 							<label class="control-label col-sm-3">총 상품 금액</label>
 							<div class="col-md-7 col-sm-8">
 								<div class="input-group">
-									<input type="text" class="form-control" name="totalPrice" id="totalPrice"  value="****" readonly>
+									<input type="text" class="form-control" name="totalPrice" id="totalPrice"  readonly>
 								</div>
 							</div>
 						</div>
