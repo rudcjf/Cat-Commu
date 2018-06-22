@@ -34,5 +34,12 @@ public class BoardDao {
 		Integer result = sqlSession.update(sqlMapId, dataMap);
 		return result;
 	}
+	
+/*	public Object saveObject(String sqlMapId, Object dataMap) {
+		Integer result = sqlSession.update(sqlMapId, dataMap);
+		return result;
+	}*/
+	
+
 
 }

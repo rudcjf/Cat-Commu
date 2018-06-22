@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
-<%@ page session="true" %>
+
 <!-- Navbar Start-->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -40,10 +40,10 @@
         </li>
         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
       </ul>
+    </div>
       <form>
             <input type="hidden" name="memberId" value="${principalName}">
-    </form>
-    </div>
+    </form>  
   </div>
 </nav>
  <!-- Navbar End -->

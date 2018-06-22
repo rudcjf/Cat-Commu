@@ -65,7 +65,7 @@
 	
 	</insert>
 	
-	<!-- <insert id="merge" parameterType="Map">
+	 <insert id="merge" parameterType="Map">
 		MERGE INTO CAT_BOARD BOARD1
 		     USING (SELECT #{BOARD_SEQ} AS BOARD_SEQ FROM DUAL) BOARD2
 		        ON (BOARD1.BOARD_SEQ = BOARD2.BOARD_SEQ)
@@ -94,5 +94,5 @@
 				, 0
 				, #{MEMBER_ID} 	SESSION ID
 			)
-	</insert> -->
+	</insert> 
 </mapper>

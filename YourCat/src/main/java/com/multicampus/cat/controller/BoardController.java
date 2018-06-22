@@ -69,7 +69,7 @@ public class BoardController {
 			
 		}
 		
-		/*else if ("merge".equalsIgnoreCase(action)) {
+	/*	else if ("merge".equalsIgnoreCase(action)) {
 			viewName = viewName + "BoardList";
 			resultMap = (Map<String, Object>) service.saveObject(paramMap);
 		}*/

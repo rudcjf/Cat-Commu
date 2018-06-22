@@ -30,21 +30,14 @@
 	
 	</http>
 	
-	 <!-- <authentication-manager>
-		<authentication-provider>
-			<user-service>
-				<user name="member@naver.com" password="12345" authorities="ROLE_USER" />
-				<user name="admin@naver.com" password="09876" authorities="ROLE_ADMIN" />
-			</user-service>
-		</authentication-provider>
-	</authentication-manager> -->
+	
 	
 	 <authentication-manager>
 		<authentication-provider>
 			<jdbc-user-service data-source-ref="dataSource" 
 				users-by-username-query="SELECT MEMBER_ID as username, MEMBER_PASSWORD as password, 1 as enabled
 										FROM CAT_MEMBER
-										WHERE MEMBER_ID = ?"
+										WHERE MEMBER_ID = ? AND MEMBER_STATUS ='Y'"
 				authorities-by-username-query="SELECT MA.MEMBER_ID as username, A.AUT_NAME as authority
 												FROM CAT_MEMBER_AUT_REL MA INNER JOIN CAT_AUTHORITY A
 												ON MA.AUT_SEQ = A.AUT_SEQ

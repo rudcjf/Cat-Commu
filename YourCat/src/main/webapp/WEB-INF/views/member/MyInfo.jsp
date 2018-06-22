@@ -13,14 +13,14 @@
 					</h1>
 					<hr>
 					<form class="form-horizontal" method="post" name="signup"
-						id="signup" action ="/member/MyInfoSave">
+						id="signup" action ="<c:url value='/member/MyInfoSave'/>">
 						<div class="form-group">
 							<label class="control-label col-sm-3">Email ID</label>
 							<div class="col-md-8 col-sm-9">
 								<div class="input-group">
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-envelope"></i></span> <input type="email"
-										class="form-control" name="emailid" id="emailid"
+										class="form-control" name="emailId" id="emailId"
 										 value="${resultMap.MEMBER_ID}" readonly>
 								</div>
 								<small> Your Email Id is being used for ensuring the
@@ -45,7 +45,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-lock"></i></span> <input type="password"
-										class="form-control" name="cpassword" id="cpassword"
+										class="form-control" name="CheckPw" id="CheckPw"
 										placeholder="Confirm your password" value="">
 								</div>
 							</div>
@@ -53,8 +53,8 @@
 						<div class="form-group">
 							<label class="control-label col-sm-3">Full Name </label>
 							<div class="col-md-8 col-sm-9">
-								<input type="text" class="form-control" name="mem_name"
-									id="mem_name"  value="${resultMap.MEMBER_NAME}">
+								<input type="text" class="form-control" name="name"
+									id="name"  value="${resultMap.MEMBER_NAME}">
 							</div>
 						</div>
 
@@ -64,7 +64,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-phone"></i></span> <input type="text"
-										class="form-control" name="contactnum" id="contactnum"
+										class="form-control" name="tel" id="tel"
 										 value="${resultMap.MEMBER_TEL}">
 								</div>
 							</div>

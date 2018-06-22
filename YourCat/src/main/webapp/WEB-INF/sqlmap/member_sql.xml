@@ -11,24 +11,28 @@
             MEMBER_HASCAT,  MEMBER_HOBBY
         from CAT_MEMBER
         <![CDATA[
-		where MEMBER_ID = #{memberId}
+		where MEMBER_ID = 'MING@naver.com'
 		]]>
 		
 	</select>
 	
-	 <update id="delete"  parameterType="Map">
-	    UPDATE CAT_BOARD SET
-			BOARD_STATUS = 'N'
-			WHERE BOARD_SEQ = #{BOARD_SEQ}
+ 	 <update id="delete"  parameterType="Map">
+	    UPDATE CAT_MEMBER SET
+			MEMBER_STATUS = 'N'
+			WHERE MEMBER_ID = #{memberId}
 			
 	</update> 
 	
-	<update id="update"  parameterType="Map">
+	 <update id="update"  parameterType="Map">
 		 UPDATE CAT_BOARD SET 
-			BOARD_TITLE = #{boardTitle} 	
-			, BOARD_CONTENTS = #{boardContents} 
+			MEMBER_NAME = #{name} 	
+			, MEMBER_TEL = #{tel} 
+			, MEMBER_RESIDENCE = #{address} 
+			, MEMBER_HASCAT = #{hasCat} 
+			, MEMBER_HOBBY = #{hobby} 
+			, MEMBER_PASSWORD = #{password} 
 		<![CDATA[
-		   where BOARD_SEQ = #{BOARD_SEQ}
+		   where MEMBER_ID = 'MING@naver.com'
 		]]>
 	</update>
 	
@@ -55,35 +59,6 @@
 			)	
 	
 	</insert>
-	
-	<!-- <insert id="merge" parameterType="Map">
-		MERGE INTO CAT_BOARD BOARD1
-		     USING (SELECT #{BOARD_SEQ} AS BOARD_SEQ FROM DUAL) BOARD2
-		        ON (BOARD1.BOARD_SEQ = BOARD2.BOARD_SEQ)
-		 WHEN MATCHED THEN
-		   UPDATE SET
-			BOARD_TITLE = #{BOARD_TITLE} 	
-			, BOARD_CONTENTS = #{BOARD_CONTENTS} 
-		 WHEN NOT MATCHED THEN
-		    INSERT (
-				BOARD_SEQ	
-				, BOARD_TITLE	
-				, BOARD_CONTENTS
-				, BOARD_STATUS	
-				, BOARD_DATE	
-				, BOARD_VIEWS
-				, BOARD_LIKE
-				, MEMBER_ID
-			)
-			values(
-				BOARD_SEQ.NEXTVAL	
-				, #{BOARD_TITLE}	
-				, #{BOARD_CONTENTS}
-				,'Y'	
-				, SYSDATE	
-				, 0	
-				, 0
-				, #{MEMBER_ID} 	SESSION ID
-			)
-	</insert> -->
+	  
+
 </mapper>
