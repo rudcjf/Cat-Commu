@@ -34,7 +34,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-lock"></i></span> <input type="password"
-										class="form-control" name="password" id="password"
+										class="form-control" name="Pw" id="Pw"
 										placeholder="Choose password (5-15 chars)" value="">
 								</div>
 							</div>
@@ -87,9 +87,24 @@
 							<div class="col-md-5 col-sm-8">
 								<div class="input-group">
 									<span class="input-group-addon"><i
-										class="glyphicon glyphicon-home"></i></span> <input type="text"
-										class="form-control" name="hasCat" id="hasCat"
-										 value="${resultMap.MEMBER_HASCAT}">
+										class="glyphicon glyphicon-home"></i></span>
+
+							<select name="hasCat" id="hasCat">
+							<c:set var="cat" value="${resultMap.MEMBER_HASCAT}" />
+								<c:choose>
+									<c:when test="${cat eq 'Y'}">
+       									<option value="Y" selected>예</option>
+       									<option value="N">아니요</option>
+   									 </c:when>
+									<c:when test="${cat eq 'N'}">
+       									<option value="Y" >예</option>
+       									<option value="N" selected>아니요</option>
+   									 </c:when>
+									
+								</c:choose>
+
+								</select>
+										
 								</div>
 							</div>
 						</div>

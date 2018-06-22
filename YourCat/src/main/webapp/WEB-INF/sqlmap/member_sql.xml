@@ -20,20 +20,20 @@
  	 <update id="delete"  parameterType="Map">
 	    UPDATE CAT_MEMBER SET
 			MEMBER_STATUS = 'N'
-			WHERE MEMBER_ID = #{memberId}
+			WHERE MEMBER_ID = #{Username}
 			
 	</update> 
 	
 	 <update id="update"  parameterType="Map">
-		 UPDATE CAT_BOARD SET 
+		 UPDATE CAT_MEMBER SET 
 			MEMBER_NAME = #{name} 	
 			, MEMBER_TEL = #{tel} 
 			, MEMBER_RESIDENCE = #{address} 
 			, MEMBER_HASCAT = #{hasCat} 
 			, MEMBER_HOBBY = #{hobby} 
-			, MEMBER_PASSWORD = #{password} 
+			, MEMBER_PASSWORD = #{Pw} 
 		<![CDATA[
-		   where MEMBER_ID = 'MING@naver.com'
+		   where MEMBER_ID = #{memberId}
 		]]>
 	</update>
 	

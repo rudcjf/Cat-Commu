@@ -1,5 +1,6 @@
 package com.multicampus.cat.controller;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,7 +36,7 @@ public class BoardController {
 
 	@RequestMapping(value = "/board/{action}", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView actonMethod(@RequestParam Map<String, Object> paramMap, 
-			@PathVariable String action, ModelAndView modelandView) {
+			@PathVariable String action, ModelAndView modelandView,Principal principal) {
 		
 		String viewName = "/board/";
 		Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -47,6 +48,7 @@ public class BoardController {
 			
 		} else if ("BoardRead".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
+			//service.
 			resultMap =  (Map<String, Object>) service.getObject(paramMap);
 			
 		} else if ("BoardEdit".equalsIgnoreCase(action)) {
@@ -59,7 +61,9 @@ public class BoardController {
 			
 		} else if ("BoardInsert".equalsIgnoreCase(action)) {
 			viewName = viewName + "BoardList";
+			paramMap.put("memberId", principal.getName());
 			service.createObject(paramMap);
+			
 			resultList = (List<Object>) service.getList(paramMap);
 			
 		}else if ("BoardUpdate".equalsIgnoreCase(action)) {

@@ -46,5 +46,6 @@
 				</tr>
 		</tbody>
 	</table>
+	<input type="hidden" name ="memberId" value="${memberId}">
 			</form>
 </div>

@@ -32,6 +32,13 @@
 			
 	</update> 
 	
+	 <update id="updateViews"  parameterType="Map">
+	    UPDATE CAT_BOARD SET
+			BOARD_VIEWS = BOARD_VIEWS + 1
+			WHERE BOARD_SEQ = #{BOARD_SEQ}
+			
+	</update> 
+	
 	<update id="update"  parameterType="Map">
 		 UPDATE CAT_BOARD SET 
 			BOARD_TITLE = #{boardTitle} 	
@@ -60,7 +67,7 @@
 				, SYSDATE	
 				, 0	
 				, 0
-				, 'SYSTEM'<!-- #{MEMBER_ID} 	SESSION ID -->
+				, #{memberId}
 			)
 	
 	</insert>
