@@ -54,7 +54,7 @@
 							<label class="control-label col-sm-3">Full Name </label>
 							<div class="col-md-8 col-sm-9">
 								<input type="text" class="form-control" name="mem_name"
-									id="mem_name"  value="${resultMap.MEMBER_Name}">
+									id="mem_name"  value="${resultMap.MEMBER_NAME}">
 							</div>
 						</div>
 
