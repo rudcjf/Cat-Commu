@@ -53,7 +53,7 @@ ON      T1.ITEM_SEQ = T2.ITEM_SEQ
 				, #{buyTel}	
 				, #{buyDelivery}
 				, #{buyMemo}
-				, 'SYSTEM@naver.com'<!-- #{MEMBER_ID} 	SESSION ID -->
+				, #{userID}<!-- #{MEMBER_ID} 	SESSION ID -->
 			)
 	
 	</insert>

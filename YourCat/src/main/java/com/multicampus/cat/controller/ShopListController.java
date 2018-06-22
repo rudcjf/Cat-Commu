@@ -1,5 +1,6 @@
 package com.multicampus.cat.controller;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.multicampus.cat.service.MemberService;
 import com.multicampus.cat.service.ShopService;
 
 /**
@@ -27,13 +29,16 @@ public class ShopListController {
 	
 	@Autowired
 	private ShopService service;
+	
+	@Autowired
+	private MemberService MemService;
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 
 	@RequestMapping(value = "/shop/{action}", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView actonMethod(@RequestParam Map<String, Object> paramMap, 
-			@PathVariable String action, ModelAndView modelandView) {
+			@PathVariable String action, ModelAndView modelandView, Principal principal) {
 		
 		String viewName = "/shop/";
 		Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -50,8 +55,12 @@ public class ShopListController {
 		} else if ("ShopBuy".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
 			resultMap =  (Map<String, Object>) service.getObject(paramMap);
-			modelandView.addObject("paramMap", paramMap);
 			
+			Map<String, Object> resultMap2 = new HashMap<String, Object>();
+			resultMap2 =  (Map<String, Object>) MemService.getObject(principal.getName());
+			
+			modelandView.addObject("resultMap2", resultMap2);
+			modelandView.addObject("paramMap",paramMap);
 		} else if("insert".equalsIgnoreCase(action)) {
 			viewName = viewName + "ShopList";
 			service.createObject(paramMap);
