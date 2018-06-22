@@ -1,5 +1,6 @@
 package com.multicampus.cat.controller;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,14 +22,21 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService service;
+	
+	public String index(Principal principal) {
+        System.out.println(principal.getName());
+        return "index";
+    }
+	
 
 	@RequestMapping(value = "/member/{action}", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView actonMethod(@RequestParam Map<String, Object> paramMap, 
-			@PathVariable String action, ModelAndView modelandView) {
+			@PathVariable String action, ModelAndView modelandView, Principal principal) {
 		
 		String viewName = "/member/";
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		List<Object> resultList = new ArrayList<Object>();
+		
 		
 		if("SignUp".equalsIgnoreCase(action)) {
 			viewName = "/member/"+"Login";
@@ -36,8 +44,9 @@ public class MemberController {
 			
 		} else if ("MyInfo".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
-			resultMap =  (Map<String, Object>) service.getObject(paramMap);
-			
+
+			resultMap =  (Map<String, Object>) service.getObject(principal.getName());
+
 		} else if ("MyInfoSave".equalsIgnoreCase(action)) {
 			viewName = viewName + "MyInfo";
 			service.updateObject(paramMap);

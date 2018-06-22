@@ -11,7 +11,8 @@
             MEMBER_HASCAT,  MEMBER_HOBBY
         from CAT_MEMBER
         <![CDATA[
-		where MEMBER_ID = 'MING@naver.com'
+		where MEMBER_ID = #{Username}
+
 		]]>
 		
 	</select>
