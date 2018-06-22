@@ -42,6 +42,7 @@ ON      T1.ITEM_SEQ = T2.ITEM_SEQ
 				, BUY_DELIVERY
 				, BUY_DELIVERYMEMO
 				, MEMBER_ID
+				, ITEM_SEQ
 				
 			)
 			values(
@@ -53,7 +54,8 @@ ON      T1.ITEM_SEQ = T2.ITEM_SEQ
 				, #{buyTel}	
 				, #{buyDelivery}
 				, #{buyMemo}
-				, #{userID}<!-- #{MEMBER_ID} 	SESSION ID -->
+				, #{userID}
+				, #{itemSeq}
 			)
 	
 	</insert>

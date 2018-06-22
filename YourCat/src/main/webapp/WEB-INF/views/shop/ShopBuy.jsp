@@ -25,6 +25,7 @@
 								<div class="input-group">
 									 <input type="text" class="form-control" name="buyName" id="buyNameS"  value="${resultMap2.MEMBER_NAME}" >
 									 <input type="hidden" class="form-control" name="userID" id = "userID" value= "${resultMap2.MEMBER_ID}">
+									 <input type="hidden" class="form-control" name="itemSeq" id = "itemSeq" value= "${resultMap.ITEM_SEQ}">
 								</div>
 								
 							</div>
