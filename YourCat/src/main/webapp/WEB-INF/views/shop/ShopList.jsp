@@ -67,7 +67,7 @@
 						<div class="row">
 							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
 							<c:choose>
-     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '사료'}">
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '장난감'}">
 							
 									<div class="col-sm-4">
 										<div class="panel panel-default">
@@ -99,7 +99,7 @@
 						<div class="row">
 							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
 							<c:choose>
-     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '사료'}">
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '화장실'}">
 							
 									<div class="col-sm-4">
 										<div class="panel panel-default">
@@ -131,7 +131,7 @@
 						<div class="row">
 							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
 							<c:choose>
-     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '사료'}">
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '캣타워'}">
 							
 									<div class="col-sm-4">
 										<div class="panel panel-default">
@@ -163,7 +163,7 @@
 						<div class="row">
 							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
 							<c:choose>
-     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '사료'}">
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '하우스'}">
 							
 									<div class="col-sm-4">
 										<div class="panel panel-default">
@@ -195,7 +195,7 @@
 						<div class="row">
 							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
 							<c:choose>
-     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '사료'}">
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '기타'}">
 							
 									<div class="col-sm-4">
 										<div class="panel panel-default">

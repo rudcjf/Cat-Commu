@@ -57,6 +57,10 @@ public class MemberController {
 			viewName = viewName + "SignUp";
 			//resultList = (List<Object>) service.getList(paramMap);
 			
+		}else if ("goSignUp".equalsIgnoreCase(action)) {
+			viewName = viewName + "SignUp";
+			//resultList = (List<Object>) service.getList(paramMap);
+			
 		}
 		
 		modelandView.setViewName(viewName);

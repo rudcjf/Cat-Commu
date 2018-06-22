@@ -72,6 +72,9 @@ public class BoardController {
 			service.updateObject(paramMap);
 			resultMap =  (Map<String, Object>) service.getObject(paramMap);
 			
+		}else if ("insert".equalsIgnoreCase(action)) {
+			viewName = viewName + "BoardInsert";
+			
 		}
 		
 	/*	else if ("merge".equalsIgnoreCase(action)) {

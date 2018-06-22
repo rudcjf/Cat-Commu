@@ -81,7 +81,7 @@ $(document).ready(function() {
 						<div class="form-group">
 							<div class="col-xs-offset-3 col-xs-10">
 								<input name="Submit" type="submit" value="구매" class="btn btn-default">
-								<a class="btn btn-default" href="<c:url value='/shoplist'/>">목록으로</a>
+								<a class="btn btn-default" href="<c:url value='/shop/ShopList'/>">목록으로</a>
 							</div>
 						</div>
 					</form>
