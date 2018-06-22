@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<<script type="text/javascript">
+
+</script>
+
+
 
 <!-- Main Start -->
 
@@ -18,7 +23,8 @@
 							<label class="control-label col-sm-3">이름</label>
 							<div class="col-md-7 col-sm-9">
 								<div class="input-group">
-									 <input type="text" class="form-control" name="buyName" id="buyNameS"  value="" >
+									 <input type="text" class="form-control" name="buyName" id="buyNameS"  value="${resultMap2.MEMBER_NAME}" >
+									 <input type="hidden" class="form-control" name="userID" id = "userID" value= "${resultMap2.MEMBER_ID}">
 								</div>
 								
 							</div>
@@ -28,14 +34,14 @@
 							<label class="control-label col-sm-3">연락처 </label>
 							<div class="col-md-7 col-sm-8">
 								<div class="input-group">
-									 <input type="text" class="form-control" name="buyTel" id="buyTel" value="" >
+									 <input type="text" class="form-control" name="buyTel" id="buyTel" value="${resultMap2.MEMBER_TEL}" >
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3">주소 </label>
 								<div class="col-md-8 col-sm-9">
-								<input type="text" class="form-control" name="buyDelivery" id="buyAddr" value="" >
+								<input type="text" class="form-control" name="buyDelivery" id="buyAddr" value="${resultMap2.MEMBER_RESIDENCE}" >
 							</div>
 						</div>
 						<div class="form-group">
