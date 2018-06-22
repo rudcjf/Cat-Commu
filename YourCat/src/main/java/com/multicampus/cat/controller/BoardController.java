@@ -48,8 +48,9 @@ public class BoardController {
 			
 		} else if ("BoardRead".equalsIgnoreCase(action)) {
 			viewName = viewName + action;
-			//service.
-			resultMap =  (Map<String, Object>) service.getObject(paramMap);
+			paramMap.put("memberId", principal.getName());
+			resultMap =  (Map<String, Object>) service.getObject2(paramMap);
+			modelandView.addObject("paramMap", paramMap);
 			
 		} else if ("BoardEdit".equalsIgnoreCase(action)) {
 			viewName = viewName + action;

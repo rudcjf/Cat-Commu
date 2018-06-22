@@ -20,6 +20,15 @@ public class BoardService {
 		return resultObject;
 	}
 
+	public Object getObject2(Object dataMap) {
+		String sqlMapId = "board.updateViews";
+		Integer resultKey = (Integer) dao.updateObject(sqlMapId, dataMap);
+		sqlMapId = "board.read";
+		Object resultObject = dao.getObject(sqlMapId, dataMap);
+		
+		return resultObject;
+	}
+	
 	public Object getObject(Object dataMap) {
 		String sqlMapId = "board.read";
 		Object resultObject = dao.getObject(sqlMapId, dataMap);

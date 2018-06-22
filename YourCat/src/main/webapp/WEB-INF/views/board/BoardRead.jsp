@@ -41,11 +41,22 @@
                     <!-- <input type="button" value="등록" onclick="sendData()" class="pull-right"/>
                     <input type="button" value="reset" class="pull-left"/>
                     <input type="button" value="글 목록으로... " class="pull-right" onclick="javascript:location.href='BoardList.jsp'"/> -->
+                    
+                    <c:set var="id" value="${paramMap.memberId}" />
+					<c:choose>
+					    <c:when test="${id eq resultMap.MEMBER_ID}">
                     <a class="btn btn-default" href="<c:url value="/board/BoardEdit?BOARD_SEQ=${resultMap.BOARD_SEQ}" />"> 수정 </a>
                     <a class="btn btn-default" href="<c:url value="/board/BoardDelete?BOARD_SEQ=${resultMap.BOARD_SEQ}" />"> 삭제 </a>
-                   <!--  <a class="btn btn-default" type="reset"> reset </a> -->
                     <a class="btn btn-default" href="<c:url value='/board/BoardList'/>"> 좋아요</a> 
                     <a class="btn btn-default" href="<c:url value='/board/BoardList'/>"> 목록으로</a> 
+					    </c:when>
+					    <c:otherwise>
+                    <a class="btn btn-default" href="<c:url value='/board/BoardList'/>"> 좋아요</a> 
+                    <a class="btn btn-default" href="<c:url value='/board/BoardList'/>"> 목록으로</a> 
+					    
+					    </c:otherwise>
+					</c:choose>
+                    
                 </td>
             </tr>
     </tbody>

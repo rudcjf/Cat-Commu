@@ -23,7 +23,6 @@
 		]]>
 		
 	</select> 
-	
 
 	 <update id="delete"  parameterType="Map">
 	    UPDATE CAT_BOARD SET
