@@ -110,24 +110,24 @@
       <div class="col-sm-4">
         <div class="thumbnail">
           <img src="<c:url value='/resources/image/item_cat01.jpg' />" alt="Paris" width="400" height="300">
-          <p><strong>ì¤í¬ëì³</strong></p>
-          <p>12345ì</p>
+          <p><strong>사료1</strong></p>
+          <p>5000</p>
           <button class="btn" data-toggle="modal" data-target="#myModal">Buy Items</button>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="thumbnail">
           <img src="<c:url value='/resources/image/item_cat02.jpg' />" alt="New York" width="400" height="300">
-          <p><strong>ìº£íì</strong></p>
-          <p>1234567ì</p>
+          <p><strong>사료2</strong></p>
+          <p>6000</p>
           <button class="btn" data-toggle="modal" data-target="#myModal">Buy Items</button>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="thumbnail">
           <img src="<c:url value='/resources/image/item_cat03.jpg' />" alt="San Francisco" width="400" height="300">
-          <p><strong>ì¥ëê°</strong></p>
-          <p>123ì</p>
+          <p><strong>사료3</strong></p>
+          <p>5500</p>
           <button class="btn" data-toggle="modal" data-target="#myModal">Buy Items</button>
         </div>
       </div>

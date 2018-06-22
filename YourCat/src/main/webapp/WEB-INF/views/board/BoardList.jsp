@@ -18,8 +18,8 @@
 				<th>글제목</th>
 				<th>작성자</th>
 				<th>작성일</th>
-				<th>조회수</th>
-				<th>공감수</th>
+				<th>조회수</th>
+				<th>공감수</th>
 			</thead>
 
 			<tbody>

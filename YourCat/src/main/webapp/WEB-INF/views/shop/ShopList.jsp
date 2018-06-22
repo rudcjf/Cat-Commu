@@ -67,7 +67,7 @@
 						<div class="row">
 							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
 							<c:choose>
-     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '장난감'}">
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '사료'}">
 							
 									<div class="col-sm-4">
 										<div class="panel panel-default">
@@ -75,7 +75,7 @@
 												${resultData.ITEM_NAME} &nbsp; <span class="badge badge_new">new</span>
 											</div>
 											<div class="panel-body">
-												<a href="<c:url value='/shop/ShopRead' />"> <img
+												<a href="<c:url value="/shop/ShopRead?ITEM_SEQ=${resultData.ITEM_SEQ}" />"> <img
 													src="<c:url value='/resources/image/${resultData.ITEM_IMG_NAME}.jpg' />"
 													class="img-responsive" style="width: 100%" alt="Image"></a>
 											</div>
@@ -89,7 +89,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- /상품목록 -->
+			<!-- /상품목록 -->
 		</div>
 		<div id="menu3" class="tab-pane fade">
 			<h3>화장실</h3>
@@ -99,7 +99,7 @@
 						<div class="row">
 							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
 							<c:choose>
-     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '화장실'}">
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '사료'}">
 							
 									<div class="col-sm-4">
 										<div class="panel panel-default">
@@ -107,7 +107,7 @@
 												${resultData.ITEM_NAME} &nbsp; <span class="badge badge_new">new</span>
 											</div>
 											<div class="panel-body">
-												<a href="<c:url value='/shop/ShopRead' />"> <img
+												<a href="<c:url value="/shop/ShopRead?ITEM_SEQ=${resultData.ITEM_SEQ}" />"> <img
 													src="<c:url value='/resources/image/${resultData.ITEM_IMG_NAME}.jpg' />"
 													class="img-responsive" style="width: 100%" alt="Image"></a>
 											</div>
@@ -121,7 +121,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- /상품목록 -->
+			<!-- /상품목록 -->
 		</div>
 		<div id="menu4" class="tab-pane fade">
 			<h3>캣타워</h3>
@@ -131,7 +131,7 @@
 						<div class="row">
 							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
 							<c:choose>
-     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '캣타워'}">
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '사료'}">
 							
 									<div class="col-sm-4">
 										<div class="panel panel-default">
@@ -139,7 +139,7 @@
 												${resultData.ITEM_NAME} &nbsp; <span class="badge badge_new">new</span>
 											</div>
 											<div class="panel-body">
-												<a href="<c:url value='/shop/ShopRead' />"> <img
+												<a href="<c:url value="/shop/ShopRead?ITEM_SEQ=${resultData.ITEM_SEQ}" />"> <img
 													src="<c:url value='/resources/image/${resultData.ITEM_IMG_NAME}.jpg' />"
 													class="img-responsive" style="width: 100%" alt="Image"></a>
 											</div>
@@ -153,7 +153,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- /상품목록 -->
+			<!-- /상품목록 -->
 		</div>
 		<div id="menu5" class="tab-pane fade">
 			<h3>하우스</h3>
@@ -163,7 +163,7 @@
 						<div class="row">
 							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
 							<c:choose>
-     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '하우스'}">
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '사료'}">
 							
 									<div class="col-sm-4">
 										<div class="panel panel-default">
@@ -171,7 +171,7 @@
 												${resultData.ITEM_NAME} &nbsp; <span class="badge badge_new">new</span>
 											</div>
 											<div class="panel-body">
-												<a href="<c:url value='/shop/ShopRead' />"> <img
+												<a href="<c:url value="/shop/ShopRead?ITEM_SEQ=${resultData.ITEM_SEQ}" />"> <img
 													src="<c:url value='/resources/image/${resultData.ITEM_IMG_NAME}.jpg' />"
 													class="img-responsive" style="width: 100%" alt="Image"></a>
 											</div>
@@ -185,7 +185,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- /상품목록 -->
+			<!-- /상품목록 -->
 		</div>
 		<div id="menu6" class="tab-pane fade">
 			<h3>기타</h3>
@@ -195,7 +195,7 @@
 						<div class="row">
 							<c:forEach items="${resultList}" var="resultData" varStatus="loop">
 							<c:choose>
-     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '기타'}">
+     			 				 <c:when test="${resultData.ITEM_CATE_NAME == '사료'}">
 							
 									<div class="col-sm-4">
 										<div class="panel panel-default">
@@ -203,7 +203,7 @@
 												${resultData.ITEM_NAME} &nbsp; <span class="badge badge_new">new</span>
 											</div>
 											<div class="panel-body">
-												<a href="<c:url value='/shop/ShopRead' />"> <img
+												<a href="<c:url value="/shop/ShopRead?ITEM_SEQ=${resultData.ITEM_SEQ}" />"> <img
 													src="<c:url value='/resources/image/${resultData.ITEM_IMG_NAME}.jpg' />"
 													class="img-responsive" style="width: 100%" alt="Image"></a>
 											</div>
@@ -217,7 +217,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- /상품목록 -->
+			<!-- /상품목록 -->
 		</div>
 	</div>
 
