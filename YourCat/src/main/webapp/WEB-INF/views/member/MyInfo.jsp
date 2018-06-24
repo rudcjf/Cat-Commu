@@ -35,7 +35,7 @@
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-lock"></i></span> <input type="password"
 										class="form-control" name="Pw" id="Pw"
-										placeholder="Choose password (5-15 chars)" value="">
+										placeholder="Choose password (5-15 chars)" value="" required>
 								</div>
 							</div>
 						</div>
@@ -46,7 +46,7 @@
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-lock"></i></span> <input type="password"
 										class="form-control" name="CheckPw" id="CheckPw"
-										placeholder="Confirm your password" value="">
+										placeholder="Confirm your password" value="" required>
 								</div>
 							</div>
 						</div>
@@ -54,7 +54,7 @@
 							<label class="control-label col-sm-3">Full Name </label>
 							<div class="col-md-8 col-sm-9">
 								<input type="text" class="form-control" name="name"
-									id="name"  value="${resultMap.MEMBER_NAME}">
+									id="name"  value="${resultMap.MEMBER_NAME}" required>
 							</div>
 						</div>
 
@@ -65,7 +65,7 @@
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-phone"></i></span> <input type="text"
 										class="form-control" name="tel" id="tel"
-										 value="${resultMap.MEMBER_TEL}">
+										 value="${resultMap.MEMBER_TEL}" required>
 								</div>
 							</div>
 						</div>
@@ -77,7 +77,7 @@
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-home"></i></span> <input type="text"
 										class="form-control" name="address" id="address"
-										 value="${resultMap.MEMBER_RESIDENCE}">
+										 value="${resultMap.MEMBER_RESIDENCE}" required>
 								</div>
 							</div>
 						</div>

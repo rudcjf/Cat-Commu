@@ -40,7 +40,7 @@
 	<div class="bottom-container">
 		<div class="row">
 			<div class="col">
-				<a href="<c:url value='/member/SignUp'/>" style="color: white"
+				<a href="<c:url value='/member/goSignUp'/>" style="color: white"
 					class="btn">Sign up</a>
 			</div>
 

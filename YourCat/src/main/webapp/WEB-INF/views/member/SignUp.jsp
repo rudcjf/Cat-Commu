@@ -4,32 +4,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
 
-<script>
 
-$(function(){
-
-	var CheckEmail = RegExp(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/);
-
-	$(".btn").click(function(){
-
-		if($("#emailid").val() < 10){
-			alert("ìì´ë 10ì ì´ì ìë ¥ ë°ë");
-		}
-
-		if($("#emailid").value.length < 10){
-			alert("ìì´ë 10ì ì´ì ìë ¥ ë°ë");
-		}
-
-
-		if(!CheckEmail.test($("#emailid").val())){
-			alert("ìì´ë íìì ë§ê² ìë ¥ ë°ë");
-		}
-
-
-	});
-});
-
-</script>
 
 
 
@@ -53,7 +28,7 @@ $(function(){
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-envelope"></i></span> <input type="email"
 										class="form-control" name="emilId" id="emilId"
-										placeholder="Enter your Email ID" value="">
+										placeholder="Enter your Email ID" value="" required>
 								</div>
 								<small> Your Email Id is being used for ensuring the
 									security of your account, authorization and access recovery. </small>
@@ -68,9 +43,9 @@ $(function(){
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-lock"></i></span> <input type="password"
 										class="form-control" name="password" id="password"
-										placeholder="Choose password (5-15 chars)" value="">
-								</div>
-							</div>
+										placeholder="Choose password (5-15 chars)" value="" required onchange="checkPw()">
+								
+							</div></div><p style="color :red;" id="pwalert"></p>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3">Confirm Password <span
@@ -80,16 +55,16 @@ $(function(){
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-lock"></i></span> <input type="password"
 										class="form-control" name="cpassword" id="cpassword"
-										placeholder="Confirm your password" value="">
+										placeholder="Confirm your password" value="" required onchange="comparePw()">
 								</div>
-							</div>
+							</div><p style="color :red;" id="pwalert2"></p>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3">Full Name <span
 								class="text-danger">*</span></label>
 							<div class="col-md-8 col-sm-9">
 								<input type="text" class="form-control" name="name"
-									id="name"  value="">
+									id="name"  value="" required>
 							</div>
 						</div>
 
@@ -101,7 +76,7 @@ $(function(){
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-phone"></i></span> <input type="text"
 										class="form-control" name="tel" id="tel"
-										 value="">
+										 value="" required>
 								</div>
 							</div>
 						</div>
@@ -114,7 +89,7 @@ $(function(){
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-home"></i></span> <input type="text"
 										class="form-control" name="address" id="address"
-										 value="">
+										 value="" required>
 								</div>
 							</div>
 						</div>
@@ -150,7 +125,7 @@ $(function(){
 						<div class="form-group">
 							<div class="col-xs-offset-3 col-xs-10">
 								<input name="Submit" type="submit" value="Sign Up" 
-									class="btn btn-default">
+									class="btn btn-default" onclick="loginchk()">
 							</div>
 						</div>
 					</form>
@@ -160,6 +135,75 @@ $(function(){
 	<!-- Main End -->
 
 
+<script>
 
+$(function(){
+
+	var CheckEmail = RegExp(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/);
+
+	$(".btn").click(function(){
+
+		if($("#emailid").val() < 10){
+			alert("ìì´ë 10ì ì´ì ìë ¥ ë°ë");
+		}
+
+		if($("#emailid").value.length < 10){
+			alert("ìì´ë 10ì ì´ì ìë ¥ ë°ë");
+		}
+
+
+		if(!CheckEmail.test($("#emailid").val())){
+			alert("ìì´ë íìì ë§ê² ìë ¥ ë°ë");
+		}
+		
+		
+
+
+	});
+});
+
+
+function checkPw(){
+	var pw = document.getElementById("password").value.length;
+	if(pw<5 || pw>15){
+		document.getElementById("pwalert").innerHTML="Choose password (5-15 chars)";
+	}else{
+		document.getElementById("pwalert").innerHTML="";
+		
+	}
+}
+
+function loginchk(){
+	 var regx = /^[a-zA-Z0-9]*$/;
+	 var pw = document.getElementById("password").value.length;
+	var pwch = document.getElementById("cpassword").value;
+	
+	 if (pw < 5 || pw == null || pw >15) {
+		  document.getElementById("password").focus();
+		  return false;
+	}
+	 if(pw != pwch){
+		 return false;
+	 }
+	 document.getElementById("signup").submit();
+	}
+
+function comparePw(){
+	var pw = document.getElementById("password").value;
+	var pwch = document.getElementById("cpassword").value;
+	
+	if(pw != pwch){
+		document.getElementById("pwalert2").innerHTML="비밀번호가 일치하지 않습니다";
+	}else{
+		document.getElementById("pwalert2").innerHTML="";
+		
+	}
+}
+
+
+
+
+
+</script>
 
 
