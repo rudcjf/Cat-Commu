@@ -61,5 +61,17 @@
 	
 	</insert>
 	  
+	  	<insert id="insertAut" parameterType="Map">
+		 INSERT INTO cat_member_aut_rel(
+				MEMBER_ID	
+				, AUT_SEQ
+			)
+			values(
+				#{emilId}	
+				, 'UUID-1111-0002'
+				
+			)	
+	
+	</insert>
 
 </mapper>

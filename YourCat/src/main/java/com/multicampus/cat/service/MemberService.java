@@ -38,6 +38,16 @@ public class MemberService {
 		String sqlMapId = "member.insert";
 		Object resultObject =  dao.createObject(sqlMapId, dataMap);
 		
+		createAutObject(dataMap);
+		
+		return resultObject;
+	}
+	
+	public Object createAutObject(Object dataMap) {
+		String sqlMapId = "member.insertAut";
+		
+		Object resultObject =  dao.createObject(sqlMapId, dataMap);
+		
 		return resultObject;
 	}
 	

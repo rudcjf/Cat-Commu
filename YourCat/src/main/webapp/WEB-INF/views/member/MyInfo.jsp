@@ -35,9 +35,9 @@
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-lock"></i></span> <input type="password"
 										class="form-control" name="Pw" id="Pw"
-										placeholder="Choose password (5-15 chars)" value="" required>
+										placeholder="Choose password (5-15 chars)" value="" required required onchange="checkPw()">
 								</div>
-							</div>
+							</div><p style="color :red;" id="pwalert"></p>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3">Confirm Password </label>
@@ -46,9 +46,9 @@
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-lock"></i></span> <input type="password"
 										class="form-control" name="CheckPw" id="CheckPw"
-										placeholder="Confirm your password" value="" required>
+										placeholder="Confirm your password" value="" required onchange="comparePw()">
 								</div>
-							</div>
+							</div><p style="color :red;" id="pwalert2"></p>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3">Full Name </label>
@@ -145,3 +145,51 @@
 		</div>
 	</div>
 	<!-- Main End -->
+	
+<script type="text/javascript">
+function checkPw(){
+	var pw = document.getElementById("Pw").value.length;
+	if(pw<5 || pw>15){
+		document.getElementById("pwalert").innerHTML="Choose password (5-15 chars)";
+	}else{
+		document.getElementById("pwalert").innerHTML="";
+		
+	}
+}
+
+function loginchk(){
+	 var regx = /^[a-zA-Z0-9]*$/;
+	 var pw = document.getElementById("Pw").value;
+	var pwch = document.getElementById("CheckPw").value;
+	
+	 if (pw.length < 5 || pw == null || pw.length >15) {
+		  document.getElementById("Pw").focus();
+		  return false;
+	}
+	 if(pw != pwch){
+		 return false;
+	 }
+	 document.getElementById("signup").submit();
+	}
+
+function comparePw(){
+	var pw = document.getElementById("Pw").value;
+	var pwch = document.getElementById("CheckPw").value;
+	
+	if(pw != pwch){
+		document.getElementById("pwalert2").innerHTML="비밀번호가 일치하지 않습니다";
+	}else{
+		document.getElementById("pwalert2").innerHTML="";
+		
+	}
+}
+
+
+
+
+
+</script>
+
+	
+	
+</script>

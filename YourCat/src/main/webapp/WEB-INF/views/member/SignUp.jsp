@@ -175,10 +175,10 @@ function checkPw(){
 
 function loginchk(){
 	 var regx = /^[a-zA-Z0-9]*$/;
-	 var pw = document.getElementById("password").value.length;
+	 var pw = document.getElementById("password").value;
 	var pwch = document.getElementById("cpassword").value;
 	
-	 if (pw < 5 || pw == null || pw >15) {
+	 if (pw.length < 5 || pw == null || pw.length >15) {
 		  document.getElementById("password").focus();
 		  return false;
 	}
