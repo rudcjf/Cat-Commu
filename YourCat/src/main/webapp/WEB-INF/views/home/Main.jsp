@@ -197,7 +197,7 @@
       <br>
       <div class="row">
         <div class="col-md-12 form-group">
-          <button class="btn pull-right" type="submit">Send</button>
+          <button class="btn pull-right" type="submit"><a href="mailto:mail@mail.com">Send</a></button>
         </div>
       </div>
     </div>
